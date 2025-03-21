@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Időpontfoglalás</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main.html">Főoldal</a></li>
+                <li><a href="elmenycsomagok.html">Élménycsomagok</a></li>
+                <li><a href="gyik.html">GYIK</a></li>
+                <li><a href="fegyverek.html">Fegyverek</a></li>
+                <li><a href="kapcsolat.html">Kapcsolat</a></li>
+                <li><a href="index.html">Foglalás</a></li>
+                <li><a href="jelentkezes.html">Jelentkezz oktatónak!</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Időpontfoglalás</h2>
+        <form id="appointment-form">
+            <label for="nev">Név:</label>
+            <input type="text" id="nevid" name="nev" required><br><br>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="emailid" name="email" required><br><br>
+
+            <label for="tel">Telefonszám:</label>
+            <input type="tel" id="telid" name="tel" required><br><br>
+
+            <label for="datum">Dátum:</label>
+            <input type="date" id="datumid" name="datum" required><br><br>
+
+            <label for="ido">Válassz egy időpontot:</label>
+            <select id="ido" name="ido" required>
+                <option value="">-- Válassz --</option>
+                <option value="8:30">8:30-10:00</option>
+                <option value="10:30">10:30-12:00</option>
+                <option value="13:00">13:00-14:30</option>
+                <option value="15:00">15:00-16:30</option>
+            </select><br><br>
+
+            <label for="Valasztott_oktato">Válassz egy oktatót:</label>
+                <select id="instructorDropdown" required>
+                    <option value="">-- Válassz egy oktatót --</option>
+                </select>
+            <br><br>
+
+            <label for="Valasztott_Csomag">Válassz egy csomagot:</label>
+            <select id="packageDropdown" required>
+                <option value="">-- Válassz egy csomagot --</option>
+            </select>
+            <br><br>
+
+            <button id="submitButton">Mentés</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Lőtér. Minden jog fenntartva.</p>
+    </footer>
+
+    <script>
+       
+    </script>
+    <style>
+        /* Az oldal teljes magasságát biztosítjuk */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: rgb(175, 161, 136);
+        }
+
+        /* A container középre igazítása */
+        .container {
+            margin: 20px auto; /* 20px fehér sáv a container felett és alatt */
+            width: 50%; /* A container szélessége */
+            background-color: white; /* Fehér háttér a container számára */
+            padding: 20px;
+            border-radius: 8px; /* Kisebb sarkok */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Árnyék a container körül */
+        }
+
+        /* Fehér sáv a header és footer körül */
+        header, footer {
+            background-color: black;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* A navigációs menü stílusa */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+            /* Menüelemek */
+            nav ul li a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                padding: 15px 20px;
+                font-size: 18px;
+            }
+
+                /* Hover effekt */
+                nav ul li a:hover {
+                    color: red;
+                }
+
+        /* Footer szöveg formázás */
+        footer p {
+            color: white;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        /* A Mentés gomb formázása */
+        button {
+            padding: 15px 30px; /* Tágabb padding (nagyobb gomb) */
+            font-size: 18px; /* Nagyobb betűméret */
+            background-color: #4CAF50; /* Zöld háttér */
+            color: white; /* Fehér szöveg */
+            border: none; /* Nincs szegély */
+            border-radius: 5px; /* Lekerekített sarkok */
+            cursor: pointer; /* Kéz ikont adunk a gombra */
+            transition: background-color 0.3s; /* Zökkenőmentes háttérszín váltás */
+        }
+
+            /* Hover effekt a gombon */
+            button:hover {
+                background-color: #45a049; /* Sötétebb zöld, amikor rávisszük az egeret */
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* A header és footer teljes szélességet kap */
+        header, footer {
+            background-color: black; /* Fekete háttér */
+            width: 100%; /* Teljes szélesség */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* A navigációs menü megfelelő formázása */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+            /* Menüelemek */
+            nav ul li {
+                display: inline;
+            }
+
+                nav ul li a {
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    padding: 15px 20px;
+                    font-size: 18px;
+                    display: inline-block;
+                }
+
+                    /* Hover effekt */
+                    nav ul li a:hover {
+                        color: red;
+                    }
+
+        /* Footer szöveg formázás */
+        footer p {
+            color: white;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        /* Biztosítja, hogy a footer az aljára kerüljön */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+
+        body {
+            background-color: rgb(0, 0, 0);
+            color: rgb(66, 66, 66);
+            font-family: Arial, sans-serif;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #f2f2f2;
+            color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgb(75, 75, 75);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #ffffff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+            input[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+                input[type="submit"]:hover {
+                    background-color: #45a049;
+                }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            margin-top: 10px;
+        }
+
+        .sikeres {
+            background-color: #000000;
+            color: blue;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #00bcd4;
+            margin-top: 20px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Minimum magasság: teljes képernyő */
+            margin: 0;
+        }
+
+        /* Tartalom kitölti a rendelkezésre álló helyet */
+        main {
+            flex: 1;
+        }
+
+        /* Fejléc és lábléc */
+        header, footer {
+            background-color: black;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Navigáció */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+            /* Menüelemek */
+            nav ul li a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                padding: 15px 20px;
+                font-size: 18px;
+            }
+
+                /* Hover effekt */
+                nav ul li a:hover {
+                    color: red;
+                }
+
+        /* Lábléc mindig az alján lesz */
+        footer {
+            margin-top: auto; /* A láblécet az aljára tolja */
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+
+    <script src="merged.js"></script>
+</body>
+</html>
