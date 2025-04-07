@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\xampp\\htdocs\\tempbackend\\tempbackend\\wwwroot\\uploads\\idcards\\0f875f15-1b35-4527-8a12-39a3ccaec94b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\idcards\\0f875f15-1b35-4527-8a12-39a3ccaec94b.jpg"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\tempbackend\\tempbackend\\wwwroot\\uploads\\idcards\\f323ed65-a75a-4b08-a538-1911145d96d0.jpg",
+      "PackagePath": "staticwebassets\\uploads\\idcards\\f323ed65-a75a-4b08-a538-1911145d96d0.jpg"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\tempbackend\\tempbackend\\wwwroot\\uploads\\qualifications\\29e5281b-64f4-4e0f-a713-720b9b2bf99f.jpg",
+      "PackagePath": "staticwebassets\\uploads\\qualifications\\29e5281b-64f4-4e0f-a713-720b9b2bf99f.jpg"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\tempbackend\\tempbackend\\wwwroot\\uploads\\qualifications\\b7df142c-b875-42cf-8559-63b9ab4ce418.jpg",
+      "PackagePath": "staticwebassets\\uploads\\qualifications\\b7df142c-b875-42cf-8559-63b9ab4ce418.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.tempbackend.props",
+      "PackagePath": "build\\tempbackend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.tempbackend.props",
+      "PackagePath": "buildMultiTargeting\\tempbackend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.tempbackend.props",
+      "PackagePath": "buildTransitive\\tempbackend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.tempbackend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "LqGypiD8UXfW8K/S4NQBeDigArIWO9x5VSXGBwPRH80=",
+  "Source": "tempbackend",
+  "BasePath": "_content/tempbackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "tempbackend\\wwwroot",
+      "Source": "tempbackend",
+      "ContentRoot": "C:\\xampp\\htdocs\\tempbackend\\tempbackend\\wwwroot\\",
+      "BasePath": "_content/tempbackend",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
