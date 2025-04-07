@@ -32,7 +32,6 @@ public class Instructor
     public InstructorStatus Status { get; set; } = InstructorStatus.Pending;
     public string? Notes { get; set; }
 }
-
 public enum InstructorStatus
 {
     Pending,        // Default status for new applications
@@ -43,3 +42,5 @@ public enum InstructorStatus
     OnLeave,        // Temporary leave
     Terminated      // No longer works here
 }
+
+

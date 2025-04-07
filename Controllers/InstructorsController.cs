@@ -60,7 +60,7 @@ public class InstructorsController : ControllerBase
                 Email = i.Email,
                 Phone = i.Phone,
                 Address = i.Address,
-                Status = i.Status.ToString(),
+                Status = i.Status,
                 HireDate = i.HireDate,
                 QualificationFileUrl = i.QualificationFileName,
                 IdCardFileUrl = i.IdCardFileName,

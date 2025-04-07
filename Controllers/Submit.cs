@@ -29,12 +29,14 @@ public class SubmitController : ControllerBase
             // Map the data to the Appointment entity
             var appointment = new Appointment
             {
-                Nev = data.Nev,
+                ClientName = data.ClientName,
                 Email = data.Email,
-                DatumIdo = data.DatumIdo, // Directly assign the DateTime value
-                Tel = data.Tel,
-                ValasztottOktatoId = data.ValasztottOktatoId,
-                ValasztottCsomagId = data.ValasztottCsomagId
+                StartTime = data.StartTime, // Directly assign the DateTime value
+                EndTime = data.EndTime, // Directly assign the DateTime value
+                Phone = data.Phone,
+                InstructorId = data.InstructorId,
+                PackageId = data.PackageId,
+                BookingDate = data.BookingDate // Directly assign the DateTime value
             };
 
             // Add the appointment to the database

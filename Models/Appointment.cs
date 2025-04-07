@@ -1,14 +1,34 @@
-﻿namespace VizsgaremekApp.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using VizsgaremekApp.Models;
 
 public class Appointment
 {
     public int Id { get; set; }
-    public string Nev { get; set; } = string.Empty;
-    public string Email { get; set; } = string.Empty;
-    public DateTime DatumIdo { get; set; }
-    public string Tel { get; set; } = string.Empty;
-    public int ValasztottOktatoId { get; set; }
-    public int ValasztottCsomagId { get; set; }
-    public Instructor? Instructor { get; set; }
-    public Package? Package { get; set; }
+
+    [Required]
+    public string ClientName { get; set; }
+
+    [Required, EmailAddress]
+    public string Email { get; set; }
+
+    [Required]
+    public string Phone { get; set; }
+
+    [Required]
+    public int InstructorId { get; set; }
+
+    [Required]
+    public int PackageId { get; set; }
+
+    [Required]
+    public DateTime StartTime { get; set; }
+
+    [Required]
+    public DateTime EndTime { get; set; }
+
+    [Required]
+    public DateTime BookingDate { get; set; }
+
+    public Instructor Instructor { get; set; }
+    public Package Package { get; set; }
 }
