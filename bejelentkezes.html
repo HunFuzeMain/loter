@@ -4,111 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bejelentkezés</title>
-   
-</head>
-<body>
-<br><br><br>
-    <h2>Bejelentkezés</h2>
-    <h3>CSak akkor tudsz bejelentkezni, ha van hozzáférésed!</h3>
-    <div class="bejelentkezes-form">
-        <input type="text" id="felhasznalo" placeholder="Felhasználónév" required><br>
-        <input type="password" id="jelszo" placeholder="Jelszó" required><br><br>
-        <button onclick="bejel()">Belépés</button>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <style>
         body {
             text-align: center;
             padding: 50px;
             background-color: rgb(36, 51, 51);
-            color: #6b6b6b;
+            color: white;
+            font-family: Arial, sans-serif;
         }
-        .bejeletkezes-form {
+        .bejelentkezes-form {
             width: 300px;
             margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: center;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
         .bejelentkezes-form input {
-            width: 15%;
-            padding: 10px;
+            width: 80%;
+            padding: 12px;
             margin: 10px 0;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 5px;
-            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
         }
         .bejelentkezes-form button {
-            width: 15%;
-            padding: 10px;
+            width: 85%;
+            padding: 12px;
             background-color: #ff6a00;
             color: white;
             border: none;
             border-radius: 5px;
-            cursor:crosshair;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
         .bejelentkezes-form button:hover {
-            background-color: #f14400;
+            background-color: #e05d00;
         }
-
-
-
-
-
-
-
-
-
-        
+        h2 {
+            color: #ff7700;
+            margin-bottom: 5px;
+        }
+        h3 {
+            color: #ccc;
+            margin-top: 0;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+        #error-message {
+            color: #ff4444;
+            margin-top: 15px;
+            font-weight: bold;
+        }
     </style>
+</head>
+<body>
+    <div class="bejelentkezes-form">
+        <h2>Bejelentkezés</h2>
+        <h3>Csak akkor tudsz bejelentkezni, ha van hozzáférésed!</h3>
+        <input type="text" id="felhasznalo" placeholder="Felhasználónév" required><br>
+        <input type="password" id="jelszo" placeholder="Jelszó" required><br>
+        <button onclick="bejel()">Belépés</button>
+        <div id="error-message"></div>
+    </div>
+
     <script>
-        // Dolgozók listája, ahol minden dolgozónak van egy neve és jelszava
-        let dolgozok = [
-            { id2: 'd1', nev2: 'Kiss Béla', datum2: '2025-04-12', jelszo: 'jelszo123' },
-            { id2: 'd2', nev2: 'Horváth Máté', datum2: '2025-04-21', jelszo: 'password456' },
-            { id2: 'd3', nev2: 'Asztalos Mihály', datum2: '2025-05-03', jelszo: 'admin123' }
-        ];
-
-        // Bejelentkezés függvénye
-        function bejel() {
-            const felhasznalo = document.getElementById('felhasznalo').value.trim();//trim elkeruli a veletlen szokozoket
+        async function bejel() {
+            const felhasznalo = document.getElementById('felhasznalo').value.trim();
             const jelszo = document.getElementById('jelszo').value.trim();
+            const errorDisplay = document.getElementById('error-message');
 
-            // Ellenőrizzük, hogy a megadott felhasználónév és jelszó egyeznek-e a dolgozók listájával
-            const dolgozo = dolgozok.find(paprika => paprika.nev2 === felhasznalo && paprika.jelszo === jelszo);
+            errorDisplay.textContent = '';
+            
+            if (!felhasznalo || !jelszo) {
+                errorDisplay.textContent = 'Kérjük, töltsd ki mindkét mezőt!';
+                return;
+            }
 
-            if (dolgozo) {
-                alert("Sikeres bejelentkezés!");
+            try {
+                const response = await fetch('http://localhost:5156/api/Auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        Username: felhasznalo,
+                        Password: jelszo
+                    })
+                });
 
-                // Átirányítás a 'admin.html' oldalra sikeres bejelentkezés esetén
-                window.location.href = "admin.html";  
-            } else {
-                alert("Hibás felhasználónév vagy jelszó!");
+                if (response.ok) {
+                    window.location.href = "admin.html";
+                } else {
+                    const error = await response.json();
+                    errorDisplay.textContent = error || "Hibás felhasználónév vagy jelszó!";
+                }
+            } catch (error) {
+                console.error('Bejelentkezési hiba:', error);
+                errorDisplay.textContent = "Hiba történt a kapcsolat során";
             }
         }
-    </script>
 
+        // Enter key support
+        document.getElementById('jelszo').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                bejel();
+            }
+        });
+    </script>
 </body>
 </html>
