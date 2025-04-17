@@ -84,30 +84,23 @@
         
     </style>
     <script>
-        // Dolgozók listája, ahol minden dolgozónak van egy neve és jelszava
-        let dolgozok = [
-            { id2: 'd1', nev2: 'Kiss Béla', datum2: '2025-04-12', jelszo: 'jelszo123' },
-            { id2: 'd2', nev2: 'Horváth Máté', datum2: '2025-04-21', jelszo: 'password456' },
-            { id2: 'd3', nev2: 'Asztalos Mihály', datum2: '2025-05-03', jelszo: 'admin123' }
-        ];
+       async function bejel() {
+  const felhasznalo = document.getElementById('felhasznalo').value.trim();
+  const jelszo = document.getElementById('jelszo').value.trim();
 
-        // Bejelentkezés függvénye
-        function bejel() {
-            const felhasznalo = document.getElementById('felhasznalo').value.trim();//trim elkeruli a veletlen szokozoket
-            const jelszo = document.getElementById('jelszo').value.trim();
+  const response = await fetch('http://localhost:5156/api/Auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username: felhasznalo, password: jelszo })
+  });
 
-            // Ellenőrizzük, hogy a megadott felhasználónév és jelszó egyeznek-e a dolgozók listájával
-            const dolgozo = dolgozok.find(paprika => paprika.nev2 === felhasznalo && paprika.jelszo === jelszo);
+  if (response.ok) {
+    window.location.href = 'admin.html';
+  } else {
+    alert('Hibás felhasználónév vagy jelszó!');
+  }
+}
 
-            if (dolgozo) {
-                alert("Sikeres bejelentkezés!");
-
-                // Átirányítás a 'admin.html' oldalra sikeres bejelentkezés esetén
-                window.location.href = "admin.html";  
-            } else {
-                alert("Hibás felhasználónév vagy jelszó!");
-            }
-        }
     </script>
 
 </body>

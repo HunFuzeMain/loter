@@ -12,12 +12,16 @@
   <div id="összegzés"></div>
   <table id="ugyfelektabla">
     <thead>
-      <tr>
-        <th id="thugyfel">Név</th>
-        <th id="thugyfel">Dátum</th>
-        <th id="thugyfel">Törölni szeretnéd?</th>
-      </tr>
-    </thead>
+        <tr>
+          <th id="thugyfel">Név</th>
+          <th id="thugyfel">Dátum</th>
+          <th id="thugyfel">Időpont</th>
+          <th id="thugyfel">Csomag</th>
+          <th id="thugyfel">Oktató</th>
+          <th id="thugyfel">Törlés</th>
+        </tr>
+      </thead>
+      
     <tbody id="ugyfelLista">
       <!-- Ügyfelek ide kerülnek -->
     </tbody>
@@ -137,143 +141,119 @@
   </style>
  
  <script>
-    // ez csak ideiglenes
-    let ugyfelek = [
-      { id: 'u1', nev: 'Nagy Sándor', datum: '2025-04-12', instructorid: 'd1'},
-      { id: 'u2', nev: 'Nagy Zoltán', datum: '2025-04-21', instructorid: 'd1'},
-      { id: 'u3', nev: 'Tóth Márk', datum: '2025-05-03', instructorid: 'd3' },
-      { id: 'u4', nev: 'Rézműves Matilda', datum: '2025-12-02', instructorid: 'd3' },
-      { id: 'u5', nev: 'Bodnár Melinda', datum: '2025-06-01', instructorid: 'd2' },
-      { id: 'u6', nev: 'Vincze Mátyás', datum: '2026-01-01', instructorid: 'd1' },
-      { id: 'u7', nev: 'Borbély Demeter', datum: '2025-04-03', instructorid: 'd1' },
-      { id: 'u8', nev: 'Szűcs Márton', datum: '2025-07-07', instructorid: 'd2' },
-      { id: 'u9', nev: 'Kardos Jolán', datum: '2025-06-05', instructorid: 'd1' },
-      { id: 'u10', nev: 'Pap Szilárd', datum: '2025-04-09', instructorid: 'd3' }
-    ];
-  
-    function betoltUgyfelek() {
-      ugyfelek.sort((egyik, masik)=> new Date(egyik.datum) - new Date(masik.datum));
-      const ugyfelbody = document.getElementById('ugyfelLista');
-      ugyfelbody.innerHTML = '';
-  
+    const BASE_URL = "http://localhost:5156"; // ✅ your backend port
+    
+    let appointments = [];
+    let instructors = [];
+    
+    async function betoltUgyfelek() {
+      try {
+        const res = await fetch(`${BASE_URL}/api/Appointments`);
+        if (!res.ok) throw new Error("Nem sikerült lekérni az időpontokat.");
+        appointments = await res.json();
+    
+        appointments.sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
+    
+        const tbody = document.getElementById('ugyfelLista');
+        tbody.innerHTML = '';
+    
+        const now = new Date();
+        const currentMonth = now.getMonth();
+        const nextMonth = (currentMonth + 1) % 12;
+    
+        const thisMonth = appointments.filter(u => new Date(u.startTime).getMonth() === currentMonth);
+        const nextMonthAppointments = appointments.filter(u => new Date(u.startTime).getMonth() === nextMonth);
+    
+        document.getElementById('összegzés').innerText =
+          `Ebben a hónapban még ${thisMonth.length} ügyfél van vissza.\nKövetkező hónapra ${nextMonthAppointments.length} ügyfélnek van időpontja.`;
+    
+        for (const appointment of appointments) {
+            const startDate = new Date(appointment.startTime);
+            const endDate = new Date(appointment.endTime);
+            const date = startDate.toLocaleDateString();
+            const time = `${startDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - ${endDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
 
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${appointment.clientName}</td>
+                <td>${date}</td>
+                <td>${time}</td>
+                <td>${appointment.package}</td>
+                <td>${appointment.instructor}</td>
+                <td><button onclick="torolUgyfel(${appointment.id})">Törlés</button></td>
+            `;
 
-      const ma = new Date();
-      const Honap = ma.getMonth();
-      const kovetkezoHonap = (Honap + 1)%12;  //december utan januar legyen
-
-
-      //mostani honap(mindig a jelenlegi)
-      const maradek = ugyfelek.filter(ugyfel => {
-        const datum = new Date(ugyfel.datum);
-        return datum.getMonth() === Honap;
-      });
-
-  //kovetkezo honap
-      const kovetkezo = ugyfelek.filter(ugyfel => {
-        const datum = new Date(ugyfel.datum);
-        return datum.getMonth() === kovetkezoHonap;
-      })
-      //kiiratas
-      document.getElementById('összegzés').innerText =
-        `Ebben a hónapban még ${maradek.length} ügyfél van vissza. \n` +`Következő hónapra ${kovetkezo.length} ügyfélnek van időpontja.`;
-  
-      for (const ugyfel of ugyfelek) {
-        const sor = document.createElement('tr');
-        sor.innerHTML = `
-          <td>${ugyfel.nev}</td>
-          <td>${new Date(ugyfel.datum).toLocaleDateString()}</td>
-          <td><button onclick="torolUgyfel('${ugyfel.id}')">Törlés</button></td>
-        `;
-        ugyfelbody.appendChild(sor); //elem áthelyezése egy listábol a másikba
+          tbody.appendChild(row);
+        }
+      } catch (err) {
+        console.error("Hiba az ügyfelek betöltésekor:", err);
       }
     }
-  //ez meg masik lesz(fetch)
-    function torolUgyfel(id) {
-      ugyfelek = ugyfelek.filter(ugyfel => ugyfel.id !== id); // Törlés a listából
-      alert(`(Mock) Ügyfél törölve: ${id}`);
-      betoltUgyfelek(); // ujratoltés(frissites)
-      betoltDolgozo();//dolgozokat is frissiti
+    
+    async function torolUgyfel(id) {
+      if (!confirm("Biztosan törölni szeretnéd ezt az időpontot?")) return;
+    
+      const res = await fetch(`${BASE_URL}/api/Appointments/${id}`, { method: 'DELETE' });
+      if (res.ok) {
+        alert("Időpont törölve.");
+        await betoltUgyfelek();
+        await betoltDolgozo();
+      } else {
+        alert("Hiba történt az időpont törlése során.");
+      }
     }
-  
+    
+    async function betoltDolgozo() {
+      try {
+        const res = await fetch(`${BASE_URL}/api/Instructors`);
+        if (!res.ok) throw new Error("Nem sikerült lekérni az oktatókat.");
+        instructors = await res.json();
+    
+        const tbody = document.getElementById('dolgozolista');
+        tbody.innerHTML = '';
+    
+        document.getElementById('osszesdolgozo').innerText = `Jelenleg: ${instructors.length} munkatársunk van.`;
+    
+        for (const ins of instructors) {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${ins.name}</td>
+            <td>${ins.hireDate ? new Date(ins.hireDate).toLocaleDateString() : "–"}</td>
+            <td>${ins.activeAppointmentsCount} ügyfél</td>
+            <td><button onclick="torolDolgozo(${ins.id})">Törlés</button></td>
+          `;
+          tbody.appendChild(row);
+        }
+      } catch (err) {
+        console.error("Hiba a dolgozók betöltésekor:", err);
+      }
+    }
+    
+    async function torolDolgozo(id) {
+      if (!confirm("Biztosan törölni szeretnéd ezt az oktatót?")) return;
+    
+      const res = await fetch(`${BASE_URL}/api/Instructors/${id}`, { method: 'DELETE' });
+      if (res.ok) {
+        alert("Oktató törölve.");
+        await betoltDolgozo();
+        await betoltUgyfelek();
+      } else {
+        const msg = await res.text();
+        alert("Hiba: " + msg);
+      }
+    }
     
     betoltUgyfelek();
-
-
-
-   
-
-    //DOLGOZO RÉSZ
-     // ez csak ideiglenes
-     let dolgozok = [
-      { id2: 'd1', nev2: 'Kiss Béla', datum2: '2025-04-12' },
-      { id2: 'd2', nev2: 'Horváth Máté', datum2: '2025-04-21' },
-      { id2: 'd3', nev2: 'Asztalos Mihály', datum2: '2025-05-03' }
-      
-    ];
-  
-    function betoltDolgozo() {
-      const dolgozobody = document.getElementById('dolgozolista');
-      dolgozobody.innerHTML = '';
-
-      const ma = new Date();
-      const mostaniugyfelek = ugyfelek.filter(ugyfel => new Date(ugyfel.datum)>=ma);
-
-  
-      const Honap2 = new Date().getMonth();
-      const jelenlegi = dolgozok.filter(dolgozo => {
-        const datum2 = new Date(dolgozo.datum2);
-        return datum2.getMonth() === Honap2;
-      });
-  
-      document.getElementById('osszesdolgozo').innerText =
-        `Jelenleg: ${dolgozok.length} munkatársunk van.`;
-  
-       for(const dolgozo of dolgozok){
-        const jelenlegiUgyfek = mostaniugyfelek.filter(alma => alma.instructorid === dolgozo.id2);
-
-        const sor2 = document.createElement('tr');
-        sor2.innerHTML= `
-        <td>${dolgozo.nev2}</td>
-        <td>${new Date(dolgozo.datum2).toLocaleDateString()}</td>
-        <td>${jelenlegiUgyfek.length} ügyfél</td>
-        <td><button onclick="torolDolgozo('${dolgozo.id2}')">Törlés</button></td>
-        `;
-        dolgozobody.appendChild(sor2);
-       }
-      
-    }
-
-    function torolDolgozo(id){
-        const dolgozo = dolgozok.find(korte => korte.id2 ===id);
-        if(!dolgozo) return;
-
-        const nev = dolgozo.nev2;
-        const megerosites = confirm(`Biztosan szeretnéd törölni az alábbi dolgozót: ${nev}`);
-
-        if(megerosites){
-            const sorok = document.querySelectorAll('#dolgozolista tr');
-            sorok.forEach(sor => {
-                if(sor.innerText.includes(nev)){
-                    sor.style.transition = 'opacity 3s';
-                    sor.style.opacity = '0';
-                    setTimeout(() =>{
-                        dolgozok = dolgozok.filter(korte => korte.id2 !== id);
-                        betoltDolgozo();
-                    }, 500);
-                }
-            });
-        }
-
-    }
-
-  
-    
     betoltDolgozo();
-  </script>
+
+    setInterval(() => {
+        betoltUgyfelek();
+        betoltDolgozo();
+    }, 10000);
+    </script>
+    
 </body>
 </html>
-
 
 
 
