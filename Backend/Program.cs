@@ -7,11 +7,11 @@ using VizsgaremekApp.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<VizsgaremekContext>(options =>
-    options.UseMySql(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
-        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("DefaultConnection")
     )
 );
+
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<FileUploadService>();
