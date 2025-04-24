@@ -1,0 +1,58 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cvs\3c0f5287-bedf-4440-b9c5-984dac66f0ad.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>tempbackend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/tempbackend</BasePath>
+      <RelativePath>uploads/cvs/3c0f5287-bedf-4440-b9c5-984dac66f0ad.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>h21mj0e5p5</Fingerprint>
+      <Integrity>6cFdhdMaCsAGnIhzaLPX8vq4jy55Qd1S919miX9wY0E=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cvs\3c0f5287-bedf-4440-b9c5-984dac66f0ad.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\idcards\934d324e-06ad-4ca6-86c3-1f43585e77e5.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>tempbackend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/tempbackend</BasePath>
+      <RelativePath>uploads/idcards/934d324e-06ad-4ca6-86c3-1f43585e77e5.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ilp503u6ae</Fingerprint>
+      <Integrity>1lyvvV17apURfl/Wq58+oa52gxcy5+6iekvmTaxq7xY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\idcards\934d324e-06ad-4ca6-86c3-1f43585e77e5.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\qualifications\7e7c7c42-05c4-4746-bb08-5c1cc83565cf.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>tempbackend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/tempbackend</BasePath>
+      <RelativePath>uploads/qualifications/7e7c7c42-05c4-4746-bb08-5c1cc83565cf.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tm8l8djq6p</Fingerprint>
+      <Integrity>9SrBYJtzp3RMD0GmAoDtujYMupnmJqP4CnlwXK64DdI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\qualifications\7e7c7c42-05c4-4746-bb08-5c1cc83565cf.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>

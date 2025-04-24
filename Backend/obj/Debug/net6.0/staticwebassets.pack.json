@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\admin\\Documents\\Server-sided C#\\loter-HunFuzeMain-patch-2\\wwwroot\\uploads\\cvs\\3c0f5287-bedf-4440-b9c5-984dac66f0ad.pdf",
+      "PackagePath": "staticwebassets\\uploads\\cvs\\3c0f5287-bedf-4440-b9c5-984dac66f0ad.pdf"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Documents\\Server-sided C#\\loter-HunFuzeMain-patch-2\\wwwroot\\uploads\\idcards\\934d324e-06ad-4ca6-86c3-1f43585e77e5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\idcards\\934d324e-06ad-4ca6-86c3-1f43585e77e5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Documents\\Server-sided C#\\loter-HunFuzeMain-patch-2\\wwwroot\\uploads\\qualifications\\7e7c7c42-05c4-4746-bb08-5c1cc83565cf.jpg",
+      "PackagePath": "staticwebassets\\uploads\\qualifications\\7e7c7c42-05c4-4746-bb08-5c1cc83565cf.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.tempbackend.props",
+      "PackagePath": "build\\tempbackend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.tempbackend.props",
+      "PackagePath": "buildMultiTargeting\\tempbackend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.tempbackend.props",
+      "PackagePath": "buildTransitive\\tempbackend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.tempbackend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.tempbackend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

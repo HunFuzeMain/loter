@@ -1,0 +1,20 @@
+{
+  "Version": 1,
+  "Hash": "yWVPj3O4DqnnYmBnhBPlpNdyTQA/g7jgnMgACCeFTS4=",
+  "Source": "tempbackend",
+  "BasePath": "_content/tempbackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "tempbackend\\wwwroot",
+      "Source": "tempbackend",
+      "ContentRoot": "C:\\Users\\admin\\Documents\\Server-sided C#\\loter-HunFuzeMain-patch-2\\wwwroot\\",
+      "BasePath": "_content/tempbackend",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
+}
