@@ -16,6 +16,21 @@ namespace VizsgaremekApp.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Instructor>(entity =>
+                {
+                    entity.Property(e => e.Name).HasColumnType("text");
+                    entity.Property(e => e.Email).HasColumnType("text");
+                    entity.Property(e => e.Phone).HasColumnType("text");
+                    entity.Property(e => e.Address).HasColumnType("text");
+                    entity.Property(e => e.Password).HasColumnType("text");
+                    entity.Property(e => e.QualificationFileName).HasColumnType("text");
+                    entity.Property(e => e.IdCardFileName).HasColumnType("text");
+                    entity.Property(e => e.CVFileName).HasColumnType("text");
+                    entity.Property(e => e.Status).HasColumnType("integer");
+                    entity.Property(e => e.ApplicationDate).HasColumnType("timestamp");
+                    entity.Property(e => e.HireDate).HasColumnType("timestamp");
+                    entity.Property(e => e.IsActive).HasColumnType("boolean");
+                });
             modelBuilder.Entity<Instructor>().HasData(
                 new Instructor
                 {
