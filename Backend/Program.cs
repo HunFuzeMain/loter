@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 using VizsgaremekApp.Models;
 using VizsgaremekApp.Services;
+using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
