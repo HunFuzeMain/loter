@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejelentkezés</title>
+   
+</head>
+<body>
+<br><br><br>
+    <h2>Bejelentkezés</h2>
+    <h3>CSak akkor tudsz bejelentkezni, ha van hozzáférésed!</h3>
+    <div class="bejelentkezes-form">
+        <input type="text" id="felhasznalo" placeholder="Felhasználónév" required><br>
+        <input type="password" id="jelszo" placeholder="Jelszó" required><br><br>
+        <button onclick="bejel()">Belépés</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            background-color: rgb(36, 51, 51);
+            color: #6b6b6b;
+        }
+        .bejeletkezes-form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .bejelentkezes-form input {
+            width: 15%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .bejelentkezes-form button {
+            width: 15%;
+            padding: 10px;
+            background-color: #ff6a00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor:crosshair;
+        }
+        .bejelentkezes-form button:hover {
+            background-color: #f14400;
+        }
+
+
+
+
+
+
+
+
+
+        
+    </style>
+    <script>
+       async function bejel() {
+  const felhasznalo = document.getElementById('felhasznalo').value.trim();
+  const jelszo = document.getElementById('jelszo').value.trim();
+
+  const response = await fetch('http://localhost:5156/api/Auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username: felhasznalo, password: jelszo })
+  });
+
+  if (response.ok) {
+    window.location.href = 'admin.html';
+  } else {
+    alert('Hibás felhasználónév vagy jelszó!');
+  }
+}
+
+    </script>
+
+</body>
+</html>
