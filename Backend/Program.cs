@@ -3,15 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using VizsgaremekApp.Models;
 using VizsgaremekApp.Services;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
+//  PostgreSQL kapcsolat environment változóból
+var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
 builder.Services.AddDbContext<VizsgaremekContext>(options =>
-    options.UseNpgsql(
-        builder.Configuration.GetConnectionString("DefaultConnection")
-    )
+    options.UseNpgsql(connectionString)
 );
-
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<FileUploadService>();
@@ -25,9 +23,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader();
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
     });
 });
 
@@ -35,11 +31,11 @@ builder.Services.Configure<FormOptions>(options =>
 {
     options.MultipartBodyLengthLimit = 5 * 1024 * 1024; // 5MB
 });
+
 builder.Services.Configure<EmailSettings>(
     builder.Configuration.GetSection("EmailSettings"));
 
 builder.Services.AddScoped<EmailService>();
-
 
 var app = builder.Build();
 
