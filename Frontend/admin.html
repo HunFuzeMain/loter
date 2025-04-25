@@ -1,385 +1,818 @@
 <!DOCTYPE html>
 <html lang="hu">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ügyfélkezelés és Oktatók</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        padding: 10px;
-        background-color: #f4f4f4;
-      }
-      h1,
-      h2 {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>LŐTÉR</title>
+</head>
+<body>
+    <header id="fekhat">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="main.html">
+                <img id="imglogo" src="logo.png" alt="Logo" width="50" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="main.html">Főoldal</a></li>
+                <li class="nav-item"><a class="nav-link" href="elmenycsomagok.html">Élménycsomagok</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gyak">GYIK</a></li>
+                <li class="nav-item"><a class="nav-link" href="kapcsolat.html">Kapcsolat</a></li>
+                <li class="nav-item"><a class="nav-link" href="nyitvatartas.html">Nyitvatartás</a></li>
+                <li class="nav-item"><a class="nav-link" href="indopont.html">Foglalás</a></li>
+                <li class="nav-item"><a class="nav-link" href="jelentkezes.html">Jelentkezz oktatónak!</a></li>
+                <li class="nav-item"><a class="nav-link" href="bejelentkezes.html">Admin bejelentkezés</a></li>
+            </ul>
+            <a class="ms-3" href="mainen.html">
+                <img src="angol.jpg" alt="Switch to English" id="nyelv" style="height: 30px;">
+            </a>
+            </div>
+        </nav>
+    </header>
+    <div class="vonalkeret"><div class="vonal"></div></div>
+    <br>
+    <div class="container-fluid" id="kepek">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#demo" data-slide-to="3"></li>
+          </ul>      
+          <!-- kepek mozgasa -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="kep1.png" class="d-block w-50 img-fluid" alt="AUG" title="AUG">
+            </div>
+            <div class="carousel-item">
+              <img src="kep2.png" class="d-block w-100 img-fluid" alt="SCAR-L" title="SCAR-L">
+            </div>
+            <div class="carousel-item">
+              <img src="kep3.png" class="d-block w-100 img-fluid" alt="CZ-BREN2" title="CZ-BREN2">
+            </div>
+            <div class="carousel-item">
+                <img src="kep4.png" class="d-block w-100 img-fluid" alt="Beretta" title="Beretta">
+              </div>
+          </div>      
+          <!-- kepek mozgasa -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+        
+      </div>
+
+    <main>
+        <section class="hero">
+            <h1>Üdvözöljük a Lőtér Weboldalán!</h1>
+            <h2 id="sarga">ÉLETRE SZÓLÓ EMLÉK!</h2>
+            <p  id="sarga">Fedezze fel a lövészet izgalmas világát professzionális környezetben. A hét minden napján lehet időpontot foglalni akár csoportos akár egyéni lövészetre is. </p>
+            <a href="indopont.html" class="button" id="foglaljon">Foglaljon most!</a>
+        </section>
+        <br>
+       
+        <br>
+        <section class="about">
+            <h2 class="sargac">Rólunk</h2>
+            <p>A lőtérünk modern felszerelésekkel és tapasztalt oktatókkal várja Önt. Biztonságos és izgalmas élményt nyújtunk minden látogatónknak.</p>
+        </section>
+
+        <section class="services">
+            <h2 class="sargac" class="gorduloszoveg">Szolgáltatásaink</h2>
+            <ul>
+                <p>Élménycsomagok egyedi igényekre szabva</p>
+                <p>Akár csoportos, akár privát lövészet</p>
+                <p>Lövészet kezdőknek és haladóknak</p>
+                <p>Fegyverismereti tréningek</p>
+                <p>Felkészítés versenykre</p>
+            </ul>
+        </section>
+
+        <br>
+        
+        <br>
+        <br>
+            <h2 id="gyak" class="sargac">Gyakori kérdések</h2>
+            <h3>FOGLALÁSSAL, FIZETÉSSEL KAPCSOLATOS KÉRDÉSEK</h3>
+            <div class="container">
+                <div class="flex-item keret">
+                    <p id="szoveg1">CSAK ONLINE FOGLALHATOK IDŐPONTOT?<span id="nyil1" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras1" class="leiras">Természetesen lehetőség van a helyszínen is foglalni, ugyanakkor ilyenkor nem tudjuk garantálni, hogy azon a napon tudunk helyet és fegyvert biztosítani, ezért érdemes előre a weboldalon előre foglalni.</p>
+                </div>
+                <div class="flex-item keret">
+                    <p id="szoveg2">A HELYSZÍNEN IS TUDOK FIZETNI?<span id="nyil2" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras2" class="leiras">Természetesen az mellett hogy a weboldalon feltüntetett számlaszámra utalná az összeget a helyszínen van mód akár készpénzel, bankkártyával vagy SZÉP kártyával is fizetni.</p>
+                </div>
+                <div class="flex-item keret">
+                    <p id="szoveg3">HÁNY FŐRE FOGLALHATOK MAXIMUM?<span id="nyil3" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras3" class="leiras">Alapesetben egy csoport maximum 7 fő, de ha több személyre szeretnél foglalni kérlek küld e-mail a részletekről, illetve ha több mint 1fő jönne akkor azok nevét és választott csomagja nevét fel kell tüntetni az 'Egyéb megjegyzés'-nél.</p>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="flex-item keret">
+                    <p id="szoveg4">UTOLAG TUDOM MÓDOSÍTANI AZ IDŐPONTOM?<span id="nyil4" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras4" class="leiras">Igen, van rá mód, az időpontodat megelőző 72 órával van lehetőséged erre emailben.</p>
+                </div>
+                <div class="flex-item keret">
+                    <p id="szoveg5">VAN ARRA LEHETŐSÉG ARRA HOGY AZ ÉN NEVEM VAN A FOGLALÁS, VISZONT MÁS MEGY HELYETTEM?<span id="nyil5" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras5" class="leiras">Ez a pontosabb leírás 3, ami rákattintás után jelenik meg.</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="flex-item keret">
+                    <p id="szoveg6">A LÖVÉSZET CSOPORTOKBAN TÖRTÉNIK?<span id="nyil6" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras6" class="leiras">Igen, csoportban történnek amik maximum 7fő, de már 1fő-től is elinditjuk a lövészetet.</p>
+                </div>
+                <div class="flex-item keret">
+                    <p id="szoveg7">VAN LEHETŐSÉGEM PRIVÁT LÖVÉSZETRE?<span id="nyil7" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras7" class="leiras">Igen, van rá, de ennek a költségei magasabbak, a részletekről érdeklőd emailben.</p>
+                </div>
+            </div>
+            <h2>CSOMAGOKKAL KAPCSOLATOS KÉRDÉSEK</h2>
+            <div class="container">
+                <div class="flex-item keret">
+                    <p id="szoveg8">KÖTELEZŐ CSOMAGOT VÁLASZTANOM?<span id="nyil8" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras8" class="leiras">Alapcsomagok igen kötelező, de a helyszínen extra kölcségek mellett van lehetőség másik fegyverrel is lőni</p>
+                </div>
+                <div class="flex-item keret">
+                    <p id="szoveg9">LŐHETNEK-E UGYANAZON CSOPORT TAGJAI MÁSIK CSOMAGGAL?<span id="nyil9" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras9" class="leiras">Természetesen igen, de ebben az esetben kérjük a megjegyzésben feltüntetni hogy melyik csomagokat szeretnék használni.</p>
+                </div>
+                <div class="flex-item keret">
+                    <p id="szoveg10">CSAK EGYETLEN FEGYVERT SZERETNÉK KIPRÓBÁLNI.VAN RÉ LEHETŐSÉGEM?<span id="nyil10" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras10" class="leiras">Igen, van rá, de ebben az esetben telefonon kell egyeztetned időpontot és a privát lövészet áraival kell számolnod</p>
+                </div>
+            </div>
+            
+            <h2>ÉLETKORRAL KAPCSOLATOS KORLÁTOZÁSOK</h2>
+            <div class="container">
+                <div class="flex-item keret">
+                    <p id="szoveg11">HÁNY ÉVES KORTÓL VEHETEK RÉSZT ÉLMÉNYLÖVÉSZETEN?<span id="nyil11" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras11" class="leiras">Kizárólag csak azon cselekvőképes természetes személy aki betöltötte a 18. életévét</p>
+                </div>
+                <div class="flex-item keret">
+                    <p id="szoveg12">RÉSZT VEHETEK NÉZŐKÉNT 18 év alatt?<span id="nyil12" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras12" class="leiras">Nézőként igen részt lehet venni, de ebben az esetben be kell töltened a 14. életévet és legalább 1 szülö/gondviselőnek jelen kell lennie.</p>
+                </div>
+                <div class="flex-item keret">
+                    <p id="szoveg13">RÉSZT VEHETEK ÉLMÉNYLÖVÉSZETEN HA MÉG NEM MÚLTAM EL 14?<span id="nyil13" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras13" class="leiras">14.életévüket be nem töltött személyek semmilyen formánan nem vehetnek részt élménylövészeten. </p>
+                </div>
+            </div>
+
+
+            <h2>LŐTÉR SZABÁLYOK</h2>
+            <div class="container">
+                <div class="flex-item keret">
+                    <p id="szoveg14">SZÜKSÉGES BÁRMILYEN ELŐKÉPZETTSÉG VAGY MEHETEK KEZDŐKÉNT IS?<span id="nyil14" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras14" class="leiras">Nem szükséges, vendégeink nagy része kezdő, ezért mi is így készülünk fel minden lövészetre.</p>
+                </div>
+                <div class="flex-item keret">
+                    <p id="szoveg15">OKTATÁST TARTOTOK A LÖVÉSZET ELŐTT?<span id="nyil15" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras15" class="leiras">Igen, minden esetben van a lövészet előtt egy oktatás a saját és mások biztonsága miatt.</p>
+                </div>
+                <div class="flex-item keret">
+                    <p id="szoveg16">MILYEN RUHÁBAN ÉRDEMES MENNI?<span id="nyil16" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras16" class="leiras">Olyan ruházatban érdemes ami nem baj ha koszolódik, illetve legyen kényelmes. Cipő tekintetében kényelmes és zárt legyen.</p>
+                </div>
+                <div class="flex-item keret">
+                    <p id="szoveg17">Veszélyes az élménylövészet?<span id="nyil17" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras17" class="leiras">Ha minden biztonsági előírás be van tartva akkor biztonságos.</p> 
+                </div>
+                <div class="flex-item keret">
+                    <p id="szoveg18">VÉDŐFELSZERELÉST VINNEM KELL MAGAMMAL?<span id="nyil18" style="cursor: pointer;">&#x25BC;</span></p>
+                    <p id="leiras18" class="leiras">Nem, mindent szükséges eszközt és védőfelszerelést biztosítunk.</p>
+                </div>
+            </div>
+
+                
+
+              
+
+
+
+
+            
+        </div>
+            <h2>EGYÉB KÉRDÉSE VAN?</h2>
+            <input type="text" name="gyikker" id="gyikker"><br>
+            <button type="submit" value="Kérdés rögzítése!" id="kerdes">Kérdés rögzítése!</button><br><br>
+            <button id="felfelegomb" onclick="tetejere()">↑</button>
+<br>
+       
+<br>
+            <section class="contact-container">
+                <h2 class="sargac"><a href="kapcsolat.html" id="kapcs">Kapcsolat</a></h2>
+                <p>Kérdése van?</p> 
+                <p>Vegye fel velünk a kapcsolatot még ma! Keressen minket telefonon, e-mailben</p>
+                <p>E-mail: info@loter.hu</p>
+                <p>Telefon: +36 20 123 4567</p>
+                <p>Vagy az alábbi címen: 8100, Várpalota, Szent István út 1</p>
+            </section>
+
+            <iframe id="terkep"
+             width="750"
+             height="500"
+             style="border:0"
+             loading="lazy"
+             allowfullscreen
+             referrerpolicy="no-referrer-when-downgrade"
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.694286605058!2d18.1391!3d47.1986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dc61e6125f7b%3A0x200a970f3526f222!2sV%C3%A1rpalota%2C%20Szent%20Istv%C3%A1n%20%C3%BAt%201%2C%208100%20Magyarorsz%C3%A1g!5e0!3m2!1sen!2shu!4v1645671098765!5m2!1sen!2shu!3m1!1s!4e0!5m1!1sen!2shu"></iframe><br>
+
+             <br><br>
+             <div class="vonalkeret"><div class="vonal"></div></div>
+             
+            
+    </main>
+    
+    <footer>  
+        <p>&copy; 2025 Lőtér. Minden jog fenntartva.</p>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+body {
+display: flex;
+background: linear-gradient(to right, #87574a, #b46324);
+flex-direction: column;
+min-height: 100vh; /* Minimum magasság: teljes képernyő */
+margin: 0;
+text-align: center;   
+}
+
+#fekhat{
+    background-color: black;
+}
+/*h1{
+    position: relative;
+    top: -75px;
+    left: -30px;
+    color: rgb(28, 36, 53);
+    padding: 15px 35px;
+    background-color: white;
+    width:300px;
+    border-radius: 35px;
+    margin-bottom: -75px;
+}
+ */
+h1, h2, h3, h4 {
+    letter-spacing: 2px;
+}
+#sarga{
+    color: rgb(255, 254, 253);
+}
+.sargac{
+    color: rgb(255, 255, 255);
+}
+.carousel-inner img {
+    width: 50%;
+    height: 45%;
+    margin: auto;
+    
+
+}
+.vonalkeret{
+    width: 100%;
+    height: 15px;
+    background-color: black;
+    overflow: hidden;  /*túllogó rész elrejtése*/
+    position: relative; /* belső elemek relativ pozicionálása*/
+}
+.vonal{
+    width: 200px;
+    height: 5px;
+    background: linear-gradient(to right, #ffffff, #eb4407);
+    position:absolute; /* a vonal abszlút pozicionálása a konténerben*/
+    top: 50%; /*középpon függölegesen*/
+    transform: translateY(-50%); /*A vonal pontosan középre igazitása*/
+    animation: vonalmozgatas 7s infinite linear; /*vonal animacio*/
+    border-radius: 7%;
+}
+@keyframes vonalmozgatas{
+    0%{
+        left: 0%; /* a vonal kezdopoziciója bal oldalon*/
+    }
+    50%{
+        left: 100%; /*A vonal középső poziciója jobb oldalon*/
+    }
+    100%{
+        left: 0%; /*A vonal végső pocicioja vissza bal oldalra*/
+    }
+}
+
+#kapcs{
+    color: orangered;
+}
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.contact{
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#terkep{
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    border: 2px solid black;
+}
+img{
+    width: 50px;
+    height: 50px;
+}
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+/* Tartalom kitölti a rendelkezésre álló helyet */
+main {
+    flex: 1;
+}
+
+/* Fejléc és lábléc */
+header, footer {
+    flex: 1;
+    background-color: black;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Navigáció */
+#navbarNav ul {
+    flex: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Menüelemek */
+#navbarNav ul li a {
+    text-decoration: none;
+    color: orangered;
+    font-weight: bold;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+/* Hover effekt */
+nav ul li a:hover {
+    color: red;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+}
+
+nav a::before,
+nav a::after {
+     content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: orangered;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a::before {
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+}
+
+nav a::after {
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+ }
+
+nav a:hover::before,
+ nav a:hover::after {
+    transform: scaleX(1);
+}
+nav a:hover{
+      text-decoration: none;
+}
+
+
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1500px) {
+   
+    .navbar-nav {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    
+    .navbar-nav .nav-item {
+        flex: 1 1 45%;
         text-align: center;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        background: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 30px;
-      }
-      th,
-      td {
-        padding: 1rem;
-        border-bottom: 1px solid #ddd;
-        text-align: left;
-      }
-      th {
-        background-color: #ff7700;
-        color: white;
-      }
-      #hiredTable th {
-        background-color: rgb(58, 171, 232);
-      }
-      button {
-        margin-right: 5px;
-        background-color: #dc3545;
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        cursor: pointer;
-        border-radius: 4px;
-      }
-      button:hover {
-        background-color: #c82333;
-      }
-      .hire-btn {
-        background-color: #28a745;
-      }
-      .hire-btn:hover {
-        background-color: #218838;
-      }
-      #password-change {
-        max-width: 400px;
-        margin: 40px auto;
-        background: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      #password-change label,
-      #password-change input,
-      #password-change button {
-        display: block;
-        width: 100%;
-        margin-bottom: 10px;
-      }
-      #pwdChangeMsg {
-        padding: 10px;
-        border-radius: 4px;
-        display: none;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Ügyfélkezelő rendszer</h1>
-    <div id="summary"></div>
-    <!-- Időpontok táblázata -->
-    <table id="appointmentsTable">
-      <thead>
-        <tr>
-          <th>Név</th>
-          <th>Dátum</th>
-          <th>Időpont</th>
-          <th>Csomag</th>
-          <th>Oktató</th>
-          <th>Törlés</th>
-        </tr>
-      </thead>
-      <tbody id="appointmentsList"></tbody>
-    </table>
+    }
 
-    <!-- Felvett oktatók -->
-    <h2>Felvett oktatók</h2>
-    <table id="hiredTable">
-      <thead>
-        <tr>
-          <th>Név</th>
-          <th>Felvétel dátuma</th>
-          <th>Aktív ügyfelek száma</th>
-          <th>Műveletek</th>
-        </tr>
-      </thead>
-      <tbody id="hiredList"></tbody>
-    </table>
+   
+    
 
-    <!-- Nem felvett oktatók -->
-    <h2>Nem felvett oktatók</h2>
-    <table id="otherTable">
-      <thead>
-        <tr>
-          <th>Név</th>
-          <th>Állapot</th>
-          <th>Jelentkezés dátuma</th>
-          <th>Műveletek</th>
-        </tr>
-      </thead>
-      <tbody id="otherList"></tbody>
-    </table>
+    
+}
 
-    <!-- Inaktív oktatók -->
-    <h2>Inaktív oktatók</h2>
-    <table id="inactiveTable">
-      <thead>
-        <tr>
-          <th>Név</th>
-          <th>Státusz</th>
-          <th>Jelentkezés dátuma</th>
-          <th>Műveletek</th>
-        </tr>
-      </thead>
-      <tbody id="inactiveList"></tbody>
-    </table>
+/* Lábléc mindig az alján lesz */
+footer {
+    margin-top: auto; /* A láblécet az aljára tolja */
+    color: white;
+    font-size: 16px;
+}
 
-    <!-- Jelszó módosítása -->
-    <div id="password-change">
-      <h2>Jelszó módosítása</h2>
-      <form id="passwordForm">
-        <label for="instrId">Oktató ID:</label>
-        <input type="number" id="instrId" required min="1" />
-        <label for="oldPwd">Jelenlegi jelszó:</label>
-        <input type="password" id="oldPwd" required />
-        <label for="newPwd">Új jelszó:</label>
-        <input type="password" id="newPwd" required />
-        <label for="confirmPwd">Új jelszó megerősítése:</label>
-        <input type="password" id="confirmPwd" required />
-        <button type="submit">Jelszó frissítése</button>
-        <div id="pwdChangeMsg"></div>
-      </form>
-    </div>
 
-    <script>
-      const BASE_URL = "https://loter-production.up.railway.app";
+.leiras {
+     display: none;
+     
+}
+.keret {
+    border: 2px solid #8B4513; /* Sötétbarna keret */
+    padding: 10px;
+    width: max-content; /* A keret mérete igazodik a tartalomhoz */
+    margin: 10px;
+    color: rgba(255, 255, 255, 0.849); /*Gyak kérdések szövegének a szine*/
+ 
+    
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.flex-item {
+    flex: 1; /*rugalmas viselkedés*/
+    min-width: 300px; /* Legkisebb szélesség */
+    border-radius: 25px;
+}
 
-      // Betölti és megjeleníti az összes időpontot, valamint frissíti a havi összegzést.
-      async function loadAppointments() {
-        try {
-          const res = await fetch(`${BASE_URL}/api/Appointments`);
-          if (!res.ok) throw new Error("Nem sikerült lekérni az időpontokat.");
-          const apps = await res.json();
-          apps.sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
+#imglogo{
+    float: left;
+    width: 75px;
+    height: 75px;
+}
 
-          // Havi összegzés
-          const now = new Date();
-          const thisCount = apps.filter(
-            (a) => new Date(a.startTime).getMonth() === now.getMonth()
-          ).length;
-          const nextCount = apps.filter(
-            (a) =>
-              new Date(a.startTime).getMonth() === (now.getMonth() + 1) % 12
-          ).length;
-          document.getElementById(
-            "summary"
-          ).innerText = `Ebben a hónapban még ${thisCount} ügyfél van vissza.\nKövetkező hónapra ${nextCount} ügyfélnek van időpontja.`;
+/*kérdés rögzitése gomb szövegének a szine*/
+#kerdes{
+    color: white;
+}
 
-          // Táblázat feltöltése
-          const tbody = document.getElementById("appointmentsList");
-          tbody.innerHTML = "";
-          for (const a of apps) {
-            const s = new Date(a.startTime),
-              e = new Date(a.endTime);
-            tbody.insertAdjacentHTML(
-              "beforeend",
-              `
-            <tr>
-              <td>${a.clientName}</td>
-              <td>${s.toLocaleDateString()}</td>
-              <td>${s.toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-              })} - ${e.toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-              })}</td>
-              <td>${a.package}</td>
-              <td>${a.instructor}</td>
-              <td><button onclick="deleteAppointment(${
-                a.id
-              })">Törlés</button></td>
-            </tr>
-          `
-            );
-          }
-        } catch (err) {
-          console.error(err);
+#gyikker{
+    flex: 1;
+    border-radius: 70px;
+
+}
+
+
+button {
+  border: 2px solid #8B4513; /* Sötétbarna szín */
+  border-radius: 50px; /* Ovális alak */
+  padding: 10px 20px;
+  background-color: rgb(175, 161, 136); /* Világosszürke háttér (tetszőlegesen változtatható) */
+  color: black; /* Szöveg színe */
+  font-size: 16px; /* Szöveg mérete */
+  background: linear-gradient(to right, #87574a, #b46324);
+}
+#felfelegomb {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: orangered;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#felfelegomb:hover {
+    background-color: orangered;
+}
+
+#foglaljon{
+    text-decoration: none;
+    color: orangered;
+    font-weight: bold;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+#foglaljon :hover{
+    color: red;
+    
+}
+
+
+
+</style>
+
+
+
+  <script>
+
+    /*kérdés válaszok*/
+        document.getElementById("nyil1").onclick = function() {
+            var leiras = document.getElementById("leiras1");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
         }
-      }
-
-      // Törli az adott ID-jú időpontot, majd újratölti az időpontokat és oktatókat.
-      async function deleteAppointment(id) {
-        if (!confirm("Biztosan törölni szeretnéd ezt az időpontot?")) return;
-        const res = await fetch(`${BASE_URL}/api/Appointments/${id}`, {
-          method: "DELETE",
-        });
-        if (res.ok) {
-          alert("Időpont törölve.");
-          await loadAppointments();
-          await loadInstructors();
-        } else {
-          alert("Hiba történt.");
+        document.getElementById("nyil2").onclick = function() {
+            var leiras = document.getElementById("leiras2");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
         }
-      }
-
-      // Betölti az oktatókat, és három csoportba rendezi: Felvett, Nem felvett, Inaktív
-      async function loadInstructors() {
-        try {
-          const res = await fetch(`${BASE_URL}/api/Instructors`);
-          if (!res.ok) throw new Error("Nem sikerült lekérni az oktatókat.");
-          const ins = await res.json();
-
-          const hired = ins.filter((i) => i.status === "Hired" && i.isActive);
-          const others = ins.filter((i) => i.status !== "Hired" && i.isActive);
-          const inactive = ins.filter((i) => !i.isActive);
-
-          // Felvett oktatók
-          const hiredBody = document.getElementById("hiredList");
-          hiredBody.innerHTML = "";
-          for (const i of hired) {
-            hiredBody.insertAdjacentHTML(
-              "beforeend",
-              `
-            <tr>
-              <td>${i.name}</td>
-              <td>${
-                i.hireDate ? new Date(i.hireDate).toLocaleDateString() : "–"
-              }</td>
-              <td>${i.activeAppointmentsCount} ügyfél</td>
-              <td><button onclick="deleteInstructor(${
-                i.id
-              })">Törlés</button></td>
-            </tr>
-          `
-            );
-          }
-
-          // Nem felvett oktatók
-          const otherBody = document.getElementById("otherList");
-          otherBody.innerHTML = "";
-          for (const i of others) {
-            otherBody.insertAdjacentHTML(
-              "beforeend",
-              `
-            <tr>
-              <td>${i.name}</td>
-              <td>${i.status}</td>
-              <td>${new Date(i.applicationDate).toLocaleDateString()}</td>
-              <td>
-                <button class="hire-btn" onclick="hireInstructor(${
-                  i.id
-                })">Felvétel</button>
-                <button onclick="deleteInstructor(${i.id})">Törlés</button>
-              </td>
-            </tr>
-          `
-            );
-          }
-
-          // Inaktív oktatók
-          const inactiveBody = document.getElementById("inactiveList");
-          inactiveBody.innerHTML = "";
-          for (const i of inactive) {
-            inactiveBody.insertAdjacentHTML(
-              "beforeend",
-              `
-            <tr>
-              <td>${i.name}</td>
-              <td>${i.status}</td>
-              <td>${new Date(i.applicationDate).toLocaleDateString()}</td>
-              <td>
-                <button onclick="reactivateInstructor(${
-                  i.id
-                })">Reaktiválás</button>
-                <button onclick="fullDeleteInstructor(${i.id})">Törlés</button>
-              </td>
-            </tr>
-          `
-            );
-          }
-        } catch (err) {
-          console.error(err);
+        document.getElementById("nyil3").onclick = function() {
+            var leiras = document.getElementById("leiras3");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
         }
-      }
 
-      // Reaktiválja az oktatót (IsActive = true)
-      async function reactivateInstructor(id) {
-        if (!confirm("Biztosan reaktiválni szeretnéd ezt az oktatót?")) return;
-        const res = await fetch(
-          `${BASE_URL}/api/Instructors/${id}/reactivate`,
-          { method: "PATCH" }
-        );
-        if (res.ok) {
-          alert("Oktató sikeresen reaktiválva!");
-          await loadInstructors();
-          await loadAppointments();
-        } else {
-          const err = await res.json().catch(() => ({}));
-          alert(err.Message || "Hiba a reaktiválásnál.");
+
+        document.getElementById("nyil4").onclick = function() {
+            var leiras = document.getElementById("leiras4");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
         }
-      }
-
-      // Felveszi az oktatót (Status=Hired), és beállítja a HireDate-et.
-      async function hireInstructor(id) {
-        if (!confirm("Biztosan fel akarod venni ezt az oktatót?")) return;
-        const res = await fetch(`${BASE_URL}/api/Instructors/${id}/hire`, {
-          method: "PATCH",
-        });
-        if (res.ok) {
-          alert("Oktató sikeresen felvéve!");
-          await loadInstructors();
-          await loadAppointments();
-        } else {
-          const err = await res.json().catch(() => ({}));
-          alert(err.Message || "Hiba a felvételnél.");
+        document.getElementById("nyil5").onclick = function() {
+            var leiras = document.getElementById("leiras5");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
         }
-      }
-
-      // Törli az oktatót, ha nincs jövőbeli időpontja.
-      async function deleteInstructor(id) {
-        if (!confirm("Biztosan törölni szeretnéd ezt az oktatót?")) return;
-        const res = await fetch(`${BASE_URL}/api/Instructors/${id}`, {
-          method: "DELETE",
-        });
-        if (res.ok) {
-          alert("Oktató archiválva.");
-          await loadInstructors();
-          await loadAppointments();
-        } else {
-          const err = await res.json().catch(() => ({}));
-          alert(err.Message || "Hiba történt.");
+        document.getElementById("nyil6").onclick = function() {
+            var leiras = document.getElementById("leiras6");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
         }
-      }
 
-      async function fullDeleteInstructor(id) {
-        if (
-          !confirm("Biztosan véglegesen törölni szeretnéd ezt az oktatót az adatbázisból, és az összes fájlt is törölni?")
-          )
-          return;
-        const response = await fetch(
-          `${BASE_URL}/api/Instructors/${id}/permanent`,
-          {
-            method: "DELETE",
-          }
-        );
-
-        if (response.ok) {
-          alert("Oktató véglegesen törölve, és a fájlok is eltávolítva.");
-          await loadInstructors();
-        } else {
-          const msg = await response.text();
-          alert("Hiba: " + msg);
+        document.getElementById("nyil7").onclick = function() {
+            var leiras = document.getElementById("leiras7");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
         }
-      }
 
-      // Inicializálás + 10s automatikus frissítés
-      loadAppointments();
-      loadInstructors();
-      setInterval(() => {
-        loadAppointments();
-        loadInstructors();
-      }, 5000);
+
+
+
+
+ /*kérdés válaszok*/
+        document.getElementById("nyil8").onclick = function() {
+            var leiras = document.getElementById("leiras8");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
+        }
+        document.getElementById("nyil9").onclick = function() {
+            var leiras = document.getElementById("leiras9");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
+        }
+        document.getElementById("nyil10").onclick = function() {
+            var leiras = document.getElementById("leiras10");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
+        }
+
+
+
+
+
+
+ /*kérdés válaszok*/
+        document.getElementById("nyil11").onclick = function() {
+            var leiras = document.getElementById("leiras11");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
+        }
+        document.getElementById("nyil12").onclick = function() {
+            var leiras = document.getElementById("leiras12");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
+        }
+        document.getElementById("nyil13").onclick = function() {
+            var leiras = document.getElementById("leiras13");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
+        }
+
+
+
+
+ /*kérdés válaszok*/
+
+        document.getElementById("nyil14").onclick = function() {
+            var leiras = document.getElementById("leiras14");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
+        }
+        document.getElementById("nyil15").onclick = function() {
+            var leiras = document.getElementById("leiras15");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
+        }
+
+        document.getElementById("nyil16").onclick = function() {
+            var leiras = document.getElementById("leiras16");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
+        } 
+        document.getElementById("nyil17").onclick = function() {
+            var leiras = document.getElementById("leiras17");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
+        }
+        document.getElementById("nyil18").onclick = function() {
+            var leiras = document.getElementById("leiras18");
+            if (leiras.style.display === "none") {
+                leiras.style.display = "block";
+                this.innerHTML = "&#x25B2;";
+            } else {
+                leiras.style.display = "none";
+                this.innerHTML = "&#x25BC;";
+            }
+        }
+
+
+
+        /*nyil az oldal tetejére*/
+        window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("felfelegomb").style.display = "block";
+    } else {
+        document.getElementById("felfelegomb").style.display = "none";
+    }
+}
+
+function tetejere() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+
+
+
+
+
+  
+
+
+
+
     </script>
-  </body>
+<script src="js/gyik.js"></script>
+</body>
 </html>
