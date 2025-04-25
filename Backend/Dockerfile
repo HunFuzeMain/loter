@@ -1,22 +1,23 @@
-# 1. Build phase: Use the .NET SDK image for building
+# 1. Build stage
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-# Copy the entire application source code into the container
-COPY . .
+# Copy only your project file first and restore dependencies
+# (replace tempbackend.csproj with your actual .csproj name)
+COPY Backend/tempbackend.csproj ./
+RUN dotnet restore tempbackend.csproj
 
-# Restore the dependencies (and prepare the application)
-RUN dotnet restore
+# Now copy the rest of your source
+COPY Backend/ ./
 
-# Publish the app to the out directory in Release mode
-RUN dotnet publish -c Release -o /app/out
+# Publish the app into /app/out
+RUN dotnet publish tempbackend.csproj -c Release -o /app/out
 
-# 2. Runtime phase: Use the .NET runtime image to run the app
+# 2. Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
 WORKDIR /app
 
-# Copy the published app from the build phase
+# Copy the published output
 COPY --from=build /app/out ./
 
-# The entry point of the app
 ENTRYPOINT ["dotnet", "tempbackend.dll"]
