@@ -1,27 +1,22 @@
-# 1. Build kép
+# --- build stage ---
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
 
-# Mappa létrehozása és beállítása
-WORKDIR /app
+# Másoljuk csak a projekt fájljait a cache használatához
+COPY Backend/*.csproj ./Backend/
 
-# Másoljuk a projekt fájlokat
-COPY Backend/*.csproj ./
+WORKDIR /src/Backend
+RUN dotnet restore "tempbackend.csproj"
 
-# Restaurálás
-RUN dotnet restore tempbackend.csproj
-
-# Másoljuk az összes fájlt a konténerbe
+# Másoljuk az összes forráskódot
 COPY Backend/ ./
 
-# Publish a Release módba
-RUN dotnet publish tempbackend.csproj -c Release -o /app/out
+RUN dotnet publish "tempbackend.csproj" -c Release -o /app/out
 
-# 2. Runtime kép
+# --- runtime stage ---
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
 WORKDIR /app
 
-# A kiadott fájlok átmásolása
 COPY --from=build /app/out ./
 
-# Az indításhoz szükséges fájlok beállítása
 ENTRYPOINT ["dotnet", "tempbackend.dll"]
