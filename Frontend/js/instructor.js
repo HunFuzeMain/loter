@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("CVFileName", cvFile);
   
         // Send to backend
-        const response = await fetch('http://localhost:5156/api/Instructors', {
+        const response = await fetch('https://loter-production.up.railway.app/api/Instructors', {
           method: 'POST',
           body: formData
         });
