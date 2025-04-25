@@ -1,19 +1,22 @@
-# 1) Build stage
+# --- build stage ---
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-# Copy only the project file, restore deps
-COPY Backend/*.csproj ./
-RUN dotnet restore
+# Másoljuk csak a projekt fájljait a cache használatához
+COPY Backend/*.csproj ./Backend/
 
-# Copy everything else and publish
-COPY Backend/. ./
-RUN dotnet publish -c Release -o /app/publish
+WORKDIR /src/Backend
+RUN dotnet restore "tempbackend.csproj"
 
-# 2) Runtime stage
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+# Másoljuk az összes forráskódot
+COPY Backend/ ./
+
+RUN dotnet publish "tempbackend.csproj" -c Release -o /app/out
+
+# --- runtime stage ---
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
 WORKDIR /app
-COPY --from=build /app/publish ./
 
-# The DLL name must match your project’s output
+COPY --from=build /app/out ./
+
 ENTRYPOINT ["dotnet", "tempbackend.dll"]
