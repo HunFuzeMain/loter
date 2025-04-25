@@ -132,23 +132,34 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const getFormData = () => {
-        const data = {
-            instructorId: elements.inputs.instructor.value,
-            packageId: elements.inputs.package.value,
-            date: elements.inputs.date.value,
-            timeRange: elements.inputs.time.value,
-            clientName: elements.inputs.name.value,
-            email: elements.inputs.email.value,
-            phone: elements.inputs.phone.value,
-            notes: document.getElementById("textarea").value.trim()
-        };
-
-        if (Object.values(data).some(v => !v)) {
-            throw new Error("Kérjük, töltsd ki az összes mezőt!");
-        }
-
-        return data;
+    const data = {
+        instructorId: elements.inputs.instructor.value,
+        packageId: elements.inputs.package.value,
+        date: elements.inputs.date.value,
+        timeRange: elements.inputs.time.value,
+        clientName: elements.inputs.name.value,
+        email: elements.inputs.email.value,
+        phone: elements.inputs.phone.value,
+        notes: document.getElementById("textarea").value.trim() // ez most már nem kötelező
     };
+
+    // Csak a kötelező mezőket ellenőrizzük
+    const requiredFields = [
+        data.instructorId,
+        data.packageId,
+        data.date,
+        data.timeRange,
+        data.clientName,
+        data.email,
+        data.phone
+    ];
+
+    if (requiredFields.some(v => !v)) {
+        throw new Error("Kérjük, töltsd ki az összes kötelező mezőt!");
+    }
+
+    return data;
+};
 
     const submitAppointment = async (data) => {
         const response = await fetch(`${API_BASE}/Appointments`, {
