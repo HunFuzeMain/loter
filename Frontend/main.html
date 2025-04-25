@@ -7,22 +7,34 @@
     <script src="jquery.min.js"></script>
     <script src="popper.min.js"></script>
     <script src="bootstrap.min.js"></script>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>LŐTÉR</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <img id="imglogo" src="logo.png" alt="Logo" width="50" height="50">
-            <ul>
-                <li><a href="main.html">Főoldal</a></li>
-                <li><a href="elmenycsomagok.html">Élménycsomagok</a></li>
-                <li><a href="#gyak">GYIK</a></li>
-                <li><a href="kapcsolat.html">Kapcsolat</a></li>
-                <li><a href="nyitvatartas.html">Nyitvatartás</a></li>
-                <li><a href="indopont.html">Foglalás</a></li>
-                <li><a href="jelentkezes.html">Jelentkezz oktatónak!</a></li>
-                
+    <header id="fekhat">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="main.html">
+                <img id="imglogo" src="logo.png" alt="Logo" width="50" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="main.html">Főoldal</a></li>
+                <li class="nav-item"><a class="nav-link" href="elmenycsomagok.html">Élménycsomagok</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gyak">GYIK</a></li>
+                <li class="nav-item"><a class="nav-link" href="kapcsolat.html">Kapcsolat</a></li>
+                <li class="nav-item"><a class="nav-link" href="nyitvatartas.html">Nyitvatartás</a></li>
+                <li class="nav-item"><a class="nav-link" href="indopont.html">Foglalás</a></li>
+                <li class="nav-item"><a class="nav-link" href="jelentkezes.html">Jelentkezz oktatónak!</a></li>
+                <li class="nav-item"><a class="nav-link" href="bejelentkezes.html">Admin bejelentkezés</a></li>
             </ul>
+            <a class="ms-3" href="mainen.html">
+                <img src="angol.jpg" alt="Switch to English" id="nyelv" style="height: 30px;">
+            </a>
+            </div>
         </nav>
     </header>
     <div class="vonalkeret"><div class="vonal"></div></div>
@@ -36,22 +48,22 @@
             <li data-target="#demo" data-slide-to="2"></li>
             <li data-target="#demo" data-slide-to="3"></li>
           </ul>      
-          <!-- The slideshow -->
+          <!-- kepek mozgasa -->
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="kep1.png" class="center" alt="AUG" title="AUG">
+              <img src="kep1.png" class="d-block w-50 img-fluid" alt="AUG" title="AUG">
             </div>
             <div class="carousel-item">
-              <img src="kep2.png" class="center" alt="SCAR-L" title="SCAR-L">
+              <img src="kep2.png" class="d-block w-100 img-fluid" alt="SCAR-L" title="SCAR-L">
             </div>
             <div class="carousel-item">
-              <img src="kep3.png" class="center" alt="CZ-BREN2" title="CZ-BREN2">
+              <img src="kep3.png" class="d-block w-100 img-fluid" alt="CZ-BREN2" title="CZ-BREN2">
             </div>
             <div class="carousel-item">
-                <img src="kep4.png" class="center" alt="Beretta" title="Beretta">
+                <img src="kep4.png" class="d-block w-100 img-fluid" alt="Beretta" title="Beretta">
               </div>
           </div>      
-          <!-- Left and right controls -->
+          <!-- kepek mozgasa -->
           <a class="carousel-control-prev" href="#demo" data-slide="prev">
             <span class="carousel-control-prev-icon"></span>
           </a>
@@ -70,7 +82,7 @@
             <a href="indopont.html" class="button" id="foglaljon">Foglaljon most!</a>
         </section>
         <br>
-        <div class="vonalkeret"><div class="vonal"></div></div>
+       
         <br>
         <section class="about">
             <h2 class="sargac">Rólunk</h2>
@@ -89,7 +101,8 @@
         </section>
 
         <br>
-        <div class="vonalkeret"><div class="vonal"></div></div>
+        
+        <br>
         <br>
             <h2 id="gyak" class="sargac">Gyakori kérdések</h2>
             <h3>FOGLALÁSSAL, FIZETÉSSEL KAPCSOLATOS KÉRDÉSEK</h3>
@@ -185,14 +198,24 @@
                     <p id="leiras18" class="leiras">Nem, mindent szükséges eszközt és védőfelszerelést biztosítunk.</p>
                 </div>
             </div>
+
+                
+
+              
+
+
+
+
+            
+        </div>
             <h2>EGYÉB KÉRDÉSE VAN?</h2>
-            <input type="text" name="gyikker" id="gyikker"><br><br>
+            <input type="text" name="gyikker" id="gyikker"><br>
             <button type="submit" value="Kérdés rögzítése!" id="kerdes">Kérdés rögzítése!</button><br><br>
             <button id="felfelegomb" onclick="tetejere()">↑</button>
 <br>
-        <div class="vonalkeret"><div class="vonal"></div></div>
+       
 <br>
-            <section class="contact">
+            <section class="contact-container">
                 <h2 class="sargac"><a href="kapcsolat.html" id="kapcs">Kapcsolat</a></h2>
                 <p>Kérdése van?</p> 
                 <p>Vegye fel velünk a kapcsolatot még ma! Keressen minket telefonon, e-mailben</p>
@@ -252,9 +275,11 @@ background: linear-gradient(to right, #87574a, #b46324);
 flex-direction: column;
 min-height: 100vh; /* Minimum magasság: teljes képernyő */
 margin: 0;
-text-align: center;
+text-align: center;   
+}
 
-   
+#fekhat{
+    background-color: black;
 }
 /*h1{
     position: relative;
@@ -316,14 +341,24 @@ h1, h2, h3, h4 {
 #kapcs{
     color: orangered;
 }
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
 .contact{
-    float: right;
-    margin-right: 350px;
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 #terkep{
-    float: left;
-    margin-left: 220px;
-    margin-bottom: 25px;
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    border: 2px solid black;
 }
 img{
     width: 50px;
@@ -353,7 +388,7 @@ header, footer {
 }
 
 /* Navigáció */
-nav ul {
+#navbarNav ul {
     flex: 1;
     list-style: none;
     padding: 0;
@@ -366,7 +401,7 @@ nav ul {
 }
 
 /* Menüelemek */
-nav ul li a {
+#navbarNav ul li a {
     text-decoration: none;
     color: orangered;
     font-weight: bold;
@@ -379,43 +414,70 @@ nav ul li a:hover {
     color: red;
 }
 nav a {
-            text-decoration: none;
-            color: black;
-            padding: 10px 20px;
-            display: inline-block;
-            position: relative;
-        }
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+}
 
-        nav a::before,
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: orangered;
-            transition: transform 0.3s ease-in-out;
-        }
+nav a::before,
+nav a::after {
+     content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: orangered;
+    transition: transform 0.3s ease-in-out;
+}
 
-        nav a::before {
-            top: 0;
-            left: 0;
-            transform: scaleX(0);
-        }
+nav a::before {
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+}
 
-        nav a::after {
-            bottom: 0;
-            left: 0;
-            transform: scaleX(0);
-        }
+nav a::after {
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+ }
 
-        nav a:hover::before,
-        nav a:hover::after {
-            transform: scaleX(1);
-            
-        }
-        nav a:hover{
-            text-decoration: none;
-        }
+nav a:hover::before,
+ nav a:hover::after {
+    transform: scaleX(1);
+}
+nav a:hover{
+      text-decoration: none;
+}
+
+
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1500px) {
+   
+    .navbar-nav {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    
+    .navbar-nav .nav-item {
+        flex: 1 1 45%;
+        text-align: center;
+    }
+
+   
+    
+
+    
+}
 
 /* Lábléc mindig az alján lesz */
 footer {
@@ -435,6 +497,7 @@ footer {
     width: max-content; /* A keret mérete igazodik a tartalomhoz */
     margin: 10px;
     color: rgba(255, 255, 255, 0.849); /*Gyak kérdések szövegének a szine*/
+ 
     
 }
 .container {
@@ -445,7 +508,7 @@ footer {
 .flex-item {
     flex: 1; /*rugalmas viselkedés*/
     min-width: 300px; /* Legkisebb szélesség */
-    border-radius: 70px;
+    border-radius: 25px;
 }
 
 #imglogo{
@@ -464,6 +527,7 @@ footer {
     border-radius: 70px;
 
 }
+
 
 button {
   border: 2px solid #8B4513; /* Sötétbarna szín */
