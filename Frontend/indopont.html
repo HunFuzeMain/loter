@@ -336,5 +336,20 @@ nav ul li a:hover {
 
 </style>
 <script src="js/merged.js"></script>
+    <script>
+// Amikor bármilyen karaktert beírnak a név mezőbe,
+// minden szó első karakterét nagybetűvé alakítjuk.
+const nameInput = document.getElementById("nevid");
+if (nameInput) {
+  nameInput.addEventListener("input", () => {
+    // Regex: a sor elején, vagy szóköz után következő karaktert
+    // alakítjuk nagybetűssé
+    nameInput.value = nameInput.value.replace(
+      /(?:^|\s)\S/g,
+      char => char.toUpperCase()
+    );
+  });
+}
+</script>
 </body>
 </html>
