@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const API_BASE = "http://localhost:5156/api";
+    const API_BASE = "https://loter-production.up.railway.app/api";
     const MAX_PARTICIPANTS = 7;
 
     const elements = {
