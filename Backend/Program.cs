@@ -13,6 +13,7 @@ builder.Services.AddDbContext<VizsgaremekContext>(options =>
     )
 );
 
+
 builder.Services.AddControllers();
 builder.Services.AddScoped<FileUploadService>();
 builder.Services.AddEndpointsApiExplorer();
