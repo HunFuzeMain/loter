@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header id="fekhat">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="main.html">
+                <img id="imglogo" src="logo.png" alt="Logo" width="50" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li><a href="mainen.html">Main</a></li>
+                <li><a href="elmenycsomagoken.html">Experience packages</a></li>
+                <li><a href="mainen.html#gyak">FAQ</a></li>
+                <li><a href="kapcsolaten.html">Contacts</a></li>
+                <li><a href="nyitvatartasen.html">Opening hours</a></li>
+                <li><a href="indoponten.html">Reservation</a></li>
+                <li><a href="jelentkezes.html">Apply to become an instructor (ONLY HUNGARIAN)</a></li>
+                <li><a href="bejelentkezes.html">Admin Log in</a></li>
+            </ul>
+            <a class="ms-3" href="mainen.html">
+                <img src="magyar.jpg" alt="Válts át magyar nyelvre" id="nyelv" style="height: 30px;">
+            </a>
+            </div>
+        </nav>
+    </header>
+        <div class="vonalkeret"><div class="vonal"></div></div>
+        <main>
+<br>
+    <h1>Welcome to the Contact page!</h1>
+    <h2>Contacts:</h2>
+    <br><br>
+    <h3>Nyitribusz Roland</h3>
+    <ul id="kozep">
+        <li>Tel.: +36205855093</li>
+        <li>Email: nyitribusz.r@gmail.com</li>
+    </ul>
+    <br>
+        
+<br>
+    <h3>Biró Patrik </h3>
+    <ul id="kozep">
+        <li>Tel.: +36308900810</li>
+        <li>Email: biro.patrik@gmail.com</li>
+    </ul>
+    <br>
+        
+<br>
+    <h3>Kovács Gergő </h3> 
+    <ul id="kozep">
+        <li>Tel.: </li>
+        <li>Email: kovacsgergo1005@gmail.com</li>
+    </ul>
+    <br>
+        
+<br>
+    <h4 id="kozep">
+        Company Location: 8100, Várpalota, lőtér utca 1 <br>
+        Telephone: 0630432455 <br>
+        Email: loter@info.hu
+    </h4>
+    <br><br><br>
+    <iframe id="terkep"
+    width="750"
+    height="500"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.694286605058!2d18.1391!3d47.1986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dc61e6125f7b%3A0x200a970f3526f222!2sV%C3%A1rpalota%2C%20Szent%20Istv%C3%A1n%20%C3%BAt%201%2C%208100%20Magyarorsz%C3%A1g!5e0!3m2!1sen!2shu!4v1645671098765!5m2!1sen!2shu!3m1!1s!4e0!5m1!1sen!2shu"></iframe><br>
+
+
+    <br><br><br><br><br><br>    <br><br><br><br><br><br> <br><br><br>
+    <div class="vonalkeret"><div class="vonal alul" ></div></div>
+        </main>
+    <footer>
+        <p>&copy;  2025 Shooting Range. All rights reserved.</p>
+    </footer>
+
+
+
+
+
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Minimum magasság: teljes képernyő */
+    margin: 0;
+    background: linear-gradient(to right, #87574a, #b46324);
+}
+
+/* Tartalom kitölti a rendelkezésre álló helyet */
+main {
+    flex: 1;
+    text-align: center;
+}
+#kozep{
+    text-align: center;
+    list-style: none;
+}
+h3{
+    text-align: center;
+}
+#nyelv{
+    max-width: 2cm;
+    max-height: 2cm;
+}
+
+
+/* Fejléc és lábléc */
+header, footer {
+    background-color: black;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Navigáció */
+#navbarNav ul {
+    flex: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Menüelemek */
+#navbarNav ul li a {
+    text-decoration: none;
+    color: orangered;
+    font-weight: bold;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+/* Hover effekt */
+nav ul li a:hover {
+    color: red;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+}
+
+nav a::before,
+nav a::after {
+     content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: orangered;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a::before {
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+}
+
+nav a::after {
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+ }
+
+nav a:hover::before,
+ nav a:hover::after {
+    transform: scaleX(1);
+}
+nav a:hover{
+      text-decoration: none;
+}
+
+
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1500px) {
+   
+    .navbar-nav {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    
+    .navbar-nav .nav-item {
+        flex: 1 1 45%;
+        text-align: center;
+    }
+
+   
+    
+
+    
+}
+/* Lábléc mindig az alján lesz */
+footer {
+    margin-top: auto; /* A láblécet az aljára tolja */
+    color: white;
+    font-size: 16px;
+}
+.vonalkeret{
+    width: 100%;
+    height: 15px;
+    background-color: black;
+    overflow: hidden;  /*túllogó rész elrejtése*/
+    position: relative; /* belső elemek relativ pozicionálása*/
+}
+.vonal{
+    width: 200px;
+    height: 5px;
+    background: linear-gradient(to right, #ffffff, #eb4407);
+    position:absolute; /* a vonal abszlút pozicionálása a konténerben*/
+    top: 50%; /*középpon függölegesen*/
+    transform: translateY(-50%); /*A vonal pontosan középre igazitása*/
+    animation: vonalmozgatas 7s infinite linear; /*vonal animacio*/
+    border-radius: 7%;
+}
+@keyframes vonalmozgatas{
+    0%{
+        left: 0%; /* a vonal kezdopoziciója bal oldalon*/
+    }
+    50%{
+        left: 100%; /*A vonal középső poziciója jobb oldalon*/
+    }
+    100%{
+        left: 0%; /*A vonal végső pocicioja vissza bal oldalra*/
+    }
+}
+#imglogo{
+    float: left;
+    width: 75px;
+    height: 75px;
+}
+
+
+.profil{
+    width: 45px; /* Még kisebb kép */
+    height: auto; /* Arányok megtartása */
+    vertical-align: baseline; /* Kicsit lejjebb igazítás */
+    margin-left: 10px; /* Térköz a szöveg és a kép között */
+    position: relative;
+    top: 10px; /* Lejjebb tolja a képet */
+}
+    </style>
+</body>
+</html>
