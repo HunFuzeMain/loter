@@ -53,11 +53,9 @@ using (var scope = app.Services.CreateScope())
 
 app.UseCors("AllowAll");
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShootingRangeAPI v1"));
-}
+app.UseSwagger();
+app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShootingRangeAPI v1"));
+
 
 app.UseAuthorization();
 app.UseStaticFiles();
