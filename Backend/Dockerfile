@@ -2,11 +2,11 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-# M√°soljuk be a csak a csproj-ot, √©s futtassuk le a restore-t (cache-elhet≈ë)
+# M·soljuk be a csak a csproj-ot, Ès futtassuk le a restore-t (cache-elhetı)
 COPY ["Backend/tempbackend.csproj", "./"]
 RUN dotnet restore "tempbackend.csproj"
 
-# M√°soljuk be az eg√©sz k√≥dot, √©s publish-oljunk Release konfigur√°ci√≥ban
+# M·soljuk be az egÈsz kÛdot, Ès publish-oljunk Release konfigur·ciÛban
 COPY . .
 RUN dotnet publish "tempbackend.csproj" -c Release -o /app --no-restore
 
@@ -14,8 +14,8 @@ RUN dotnet publish "tempbackend.csproj" -c Release -o /app --no-restore
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
 WORKDIR /app
 
-# M√°soljuk √°t a buildelt kimenetet
+# M·soljuk ·t a buildelt kimenetet
 COPY --from=build /app ./
 
-# A kont√©ner alap√©rtelmezett entrypoint-je
+# A kontÈner alapÈrtelmezett entrypoint-je
 ENTRYPOINT ["dotnet", "tempbackend.dll"]
