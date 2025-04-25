@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             try {
-                const response = await fetch('http://localhost:5156/api/Questions', {
+                const response = await fetch('https://loter-production.up.railway.app/api/Questions', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
