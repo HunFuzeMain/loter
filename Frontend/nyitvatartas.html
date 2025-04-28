@@ -3,21 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Nyitvatartás</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <img id="imglogo" src="../images/logo.png" alt="Logo" width="50" height="50">
-            <ul>
-                <li><a href="index.html">Főoldal</a></li>
-                <li><a href="elmenycsomagok.html">Élménycsomagok</a></li>
-                <li><a href="main.html#gyak">GYIK</a></li>
-                <li><a href="kapcsolat.html">Kapcsolat</a></li>
-                <li><a href="indopont.html">Foglalás</a></li>
-                <li><a href="jelentkezes.html">Jelentkezz oktatónak!</a></li>
-                <li><a href="nyitvatartas.html">Nyitvatartás</a></li>
+    <header id="fekhat">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">
+                <img id="imglogo" src="../images/logo.png" alt="Logo" width="50" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Főoldal</a></li>
+                <li class="nav-item"><a class="nav-link" href="elmenycsomagok.html">Élménycsomagok</a></li>
+                <li class="nav-item"><a class="nav-link" href="main.html#gyak">GYIK</a></li>
+                <li class="nav-item"><a class="nav-link" href="kapcsolat.html">Kapcsolat</a></li>
+                <li class="nav-item"><a class="nav-link" href="nyitvatartas.html">Nyitvatartás</a></li>
+                <li class="nav-item"><a class="nav-link" href="indopont.html">Foglalás</a></li>
+                <li class="nav-item"><a class="nav-link" href="jelentkezes.html">Jelentkezz oktatónak!</a></li>
+                <li class="nav-item"><a class="nav-link" href="bejelentkezes.html">Admin bejelentkezés</a></li>
             </ul>
+            <a class="ms-3" href="en/mainen.html">
+                <img src="../images/angol.jpg" alt="Switch to English" id="nyelv" style="height: 30px;">
+            </a>
+            </div>
         </nav>
     </header>
 
@@ -30,33 +43,40 @@
             <th id="napido">Nap</th>
             <th id="napido">Idő</th>
         </tr>
+        
         <tr>
-            <td>Hétfő</td>
-            <td>7:30-17:00</td>
+        <td>Hétfő</td>
+        <td>7:30-17:00</td>
         </tr>
+
         <tr>
-            <td>Kedd</td>
-            <td>7:30-17:00</td>
+        <td>Kedd</td>
+        <td>7:30-17:00</td>
         </tr>
+
         <tr>
-            <td>Szerda</td>
-            <td>7:30-17:00</td>
+        <td>Szerda</td>
+        <td>7:30-17:00</td>
         </tr>
+
         <tr>
-            <td>Csütörtök</td>
-            <td>7:30-17:00</td>
+        <td>Csütörtök</td>
+        <td>7:30-17:00</td>
         </tr>
+
         <tr>
-            <td>Péntek</td>
-            <td>7:30-17:00</td>
+        <td>Péntek</td>
+        <td>7:30-17:00</td>
         </tr>
+
         <tr>
-            <td>Szombat</td>
-            <td>7:30-17:00</td>
+        <td>Szombat</td>
+        <td>7:30-17:00</td>
         </tr>
+
         <tr>
-            <td>Vasárnap</td>
-            <td>7:30-17:00</td>
+        <td>Vasárnap</td>
+        <td>7:30-17:00</td>
         </tr>
     </table>
 </div>
@@ -89,7 +109,10 @@ body {
     text-align: center;
            
 }
-   
+#nyelv{
+    max-width: 2cm;
+    max-height: 2cm;
+}
 #napido{
     color: orangered;
 }
@@ -116,17 +139,21 @@ header, footer {
 }
 
 /* Navigáció */
-nav ul {
+/* Navigáció */
+#navbarNav ul {
+    flex: 1;
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /* Menüelemek */
-nav ul li a {
+#navbarNav ul li a {
     text-decoration: none;
     color: orangered;
     font-weight: bold;
@@ -138,6 +165,69 @@ nav ul li a {
 nav ul li a:hover {
     color: red;
 }
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+}
+
+nav a::before,
+nav a::after {
+     content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: orangered;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a::before {
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+}
+
+nav a::after {
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+ }
+
+nav a:hover::before,
+ nav a:hover::after {
+    transform: scaleX(1);
+}
+nav a:hover{
+      text-decoration: none;
+}
+
+
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1500px) {
+   
+    .navbar-nav {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    
+    .navbar-nav .nav-item {
+        flex: 1 1 45%;
+        text-align: center;
+    }
+
+   
+    
+ }
 
 /* Lábléc mindig az alján lesz */
 footer {
