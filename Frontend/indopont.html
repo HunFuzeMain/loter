@@ -350,6 +350,11 @@ if (nameInput) {
     );
   });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+const today = new Date().toISOString().split("T")[0];
+document.getElementById("datumid").setAttribute("min", today);
+});
 </script>
 </body>
 </html>
