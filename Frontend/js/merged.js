@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
         inputs: {
             instructor: document.getElementById("instructorDropdown"),
             package: document.getElementById("packageDropdown"),
-            date: document.getElementById("datumid"),
-            time: document.getElementById("ido"),
-            name: document.getElementById("nevid"),
+            date: document.getElementById("dateid"),
+            time: document.getElementById("time"),
+            name: document.getElementById("nameid"),
             email: document.getElementById("emailid"),
-            phone: document.getElementById("telid")
+            phone: document.getElementById("phoneid")
         }
     };
 
