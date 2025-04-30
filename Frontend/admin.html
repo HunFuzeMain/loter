@@ -90,6 +90,7 @@
     <table id="appointmentsTable">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Név</th>
           <th>Dátum</th>
           <th>Tel. szám</th>
@@ -108,6 +109,7 @@
     <table id="hiredTable">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Név</th>
           <th>Felvétel dátuma</th>
           <th>Aktív ügyfelek száma</th>
@@ -197,6 +199,7 @@
               "beforeend",
               `
             <tr>
+              <td>${a.id}</td>
               <td>${a.clientName}</td>
               <td>${s.toLocaleDateString()}</td>
               <td>${a.phone}</td>
@@ -256,6 +259,7 @@
               "beforeend",
               `
             <tr>
+              <td>${i.id}</td>
               <td>${i.name}</td>
               <td>${
                 i.hireDate ? new Date(i.hireDate).toLocaleDateString() : "–"
@@ -277,6 +281,7 @@
               "beforeend",
               `
             <tr>
+              <td>${i.id}</td>
               <td>${i.name}</td>
               <td>${i.status}</td>
               <td>${new Date(i.applicationDate).toLocaleDateString()}</td>
@@ -299,6 +304,7 @@
               "beforeend",
               `
             <tr>
+              <td>${i.id}</td>
               <td>${i.name}</td>
               <td>${i.status}</td>
               <td>${new Date(i.applicationDate).toLocaleDateString()}</td>
