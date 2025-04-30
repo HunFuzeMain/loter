@@ -397,17 +397,23 @@
 
     //jelszócsere  
     document.getElementById("passwordForm").addEventListener("submit", async (e) => {
-    e.preventDefault(); // Megakadályozza az alapértelmezett űrlapküldést
+  e.preventDefault();
 
-    const id = document.getElementById("id").value;
-    const newPassword = document.getElementById("newPassword").value;
+  const id = document.getElementById("instrId").value;
+  const newPassword = document.getElementById("newPwd").value;
+  const confirmPassword = document.getElementById("confirmPwd").value;
 
-    try {
-      const response = await fetch(`${BASE_URL}/api/Instructors/${id}/password`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
+  if (newPassword !== confirmPassword) {
+    alert("Az új jelszavak nem egyeznek.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`${BASE_URL}/api/Instructors/${id}/password`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({ newPassword }),
     });
 
@@ -422,6 +428,7 @@
     alert("Hálózati hiba történt.");
   }
 });
+
 
 
       // Inicializálás + 10s automatikus frissítés
