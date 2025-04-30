@@ -395,6 +395,35 @@
         }
       }
 
+    //jelszócsere  
+    document.getElementById("passwordForm").addEventListener("submit", async (e) => {
+    e.preventDefault(); // Megakadályozza az alapértelmezett űrlapküldést
+
+    const id = document.getElementById("id").value;
+    const newPassword = document.getElementById("newPassword").value;
+
+    try {
+      const response = await fetch(`${BASE_URL}/api/Instructors/${id}/password`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      body: JSON.stringify({ newPassword }),
+    });
+
+    if (response.ok) {
+      alert("Jelszó sikeresen frissítve!");
+    } else {
+      const errorText = await response.text();
+      alert("Hiba történt a jelszó frissítése során: " + errorText);
+    }
+  } catch (error) {
+    console.error("Hálózati hiba:", error);
+    alert("Hálózati hiba történt.");
+  }
+});
+
+
       // Inicializálás + 10s automatikus frissítés
       loadAppointments();
       loadInstructors();
