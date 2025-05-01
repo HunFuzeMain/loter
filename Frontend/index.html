@@ -46,7 +46,7 @@
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="1" aria-label="Slide 2"></button> 
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="2" aria-label="Slide 3"></button> 
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2" aria-label="Slide 3"></button> 
           </div>      
           <!-- kepek mozgasa -->
           <div class="carousel-inner">
@@ -519,9 +519,9 @@ footer {
     opacity: 0.8;
     transition: background-color 0.5s, opacity 0.5s;
 }
-.carousel-indicators .active{
-    background-color: #dbd9d9;
-    opacity: 1;
+#kepek .carousel-indicators button.active{
+    background-color: #dbd9d9 !important;
+    opacity: 1 !important; 
 }
 #imglogo{
     float: left;
@@ -814,7 +814,11 @@ function tetejere() {
 }
 
 
-
+var myCarousel = document.getElementById('demo')
+var carousel = new bootstrap.Carousel()myCarousel,{
+    interval: 1000,
+    ride: 'caousel'
+})
 
 
 
