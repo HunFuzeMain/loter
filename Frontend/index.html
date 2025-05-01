@@ -41,7 +41,7 @@
     <div class="vonalkeret"><div class="vonal"></div></div>
     <br>
     <div class="container-fluid" id="kepek">
-        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000">
           <!-- Indicators -->
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -62,11 +62,13 @@
 
           </div>      
           <!-- kepek mozgasa -->
-          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Előző</span>
           </a>
           <a class="carousel-control-next" href="#demo" data-slide="next">
             <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Következő</span>
           </a>
         </div>
         
