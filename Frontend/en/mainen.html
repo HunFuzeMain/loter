@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="images/favicon.ico" rel="icon">
     <link rel="stylesheet" href="bootstrap.min.css">
-     <link href="images/favicon.ico" rel="icon">
     <script src="jquery.min.js"></script>
     <script src="popper.min.js"></script>
     <script src="bootstrap.min.js"></script>    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <title>SHOOTING RANGE</title>
+    <title>LŐTÉR</title>
 </head>
 <body>
-    <header id="fekhat">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="mainen.html">
-                <img id="imglogo" src="../images/logo.png" alt="Logo" width="75" height="75">
+              <img id="imglogo" src="../images/logo.png" alt="Logo" width="75" height="75">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
@@ -38,12 +38,10 @@
             </div>
         </nav>
     </header>
-
-
     <div class="vonalkeret"><div class="vonal"></div></div>
     <br>
-              <div class="container-fluid" id="kepek">
-        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <div class="container-fluid" id="kepek">
+        <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
           <!-- Indicators -->
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -53,22 +51,24 @@
           <!-- kepek mozgasa -->
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="../images/kep1.jpg" class="d-block w-50 img-fluid" alt="M4Mod" title="M4Mod">
+              <img src="images/kep1.jpg" class="d-block w-50 img-fluid" alt="M4Mod" title="M4Mod">
             </div>
             <div class="carousel-item">
-              <img src="../images/kep2.jpg" class="d-block w-50 img-fluid" alt="M4Mod" title="M4Mod">
+              <img src="images/kep2.jpg" class="d-block w-50 img-fluid" alt="M4Mod" title="M4Mod">
             </div>
             <div class="carousel-item">
-              <img src="../images/kep3.jpg" class="d-block w-50 img-fluid" alt="M4Mod" title="M4Mod">
+              <img src="images/kep3.jpg" class="d-block w-50 img-fluid" alt="M4Mod" title="M4Mod">
             </div>
 
           </div>      
           <!-- kepek mozgasa -->
-          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <a class="carousel-control-prev" href="#demo" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Előző</span>
           </a>
-          <a class="carousel-control-next" href="#demo" data-slide="next">
+          <a class="carousel-control-next" href="#demo" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Következő</span>
           </a>
         </div>
         
@@ -78,19 +78,19 @@
         <section class="hero">
             <h1>Welcome to the Shooting Range website!</h1>
             <h2 id="sarga">A Memory for a Lifetime!</h2>
-            <p  id="sarga">Discover the exciting world of shooting in a professional environment. Appointments can be booked every day of the week, for both group and individual shooting sessions.</p>
-            <a href="indoponten.html" class="button" id="foglaljon">Book now!</a>
+            <p  id="sarga">Discover the exciting world of shooting in a professional environment. Appointments can be booked every day of the week, for both group and individual shooting sessions. </p>
+            <a href="indopont.html" class="button" id="foglaljon">Book now!</a>
         </section>
         <br>
        
         <br>
         <section class="about">
             <h2 class="sargac">About us</h2>
-            <p>"Our shooting range welcomes you with modern equipment and experienced instructors. We provide a safe and exciting experience for all our visitors.</p>
+            <p>Our shooting range welcomes you with modern equipment and experienced instructors. We provide a safe and exciting experience for all our visitors.</p>
         </section>
 
         <section class="services">
-            <h2 class="sargac" class="gorduloszoveg">Services</h2>
+            <h2 class="sargac">Services</h2>
             <ul>
                 <p>Experience packages tailored to your unique needs</p>
                 <p>Group or private shooting sessions avaliable</p>
@@ -103,7 +103,8 @@
         <br>
         
         <br>
-            <h2 id="gyak" class="sargac">Frequently Asked Questions</h2>
+        <br>
+             <h2 id="gyak" class="sargac">Frequently Asked Questions</h2>
             <h3>QUESTIONS ABOUT BOOKING AND PAYMENT</h3>
             <div class="container">
                 <div class="flex-item keret">
@@ -198,19 +199,20 @@
                 </div>
             </div>
             <h2>DO YOU HAVE ANY OTHER QUESTIONS?</h2>
+
             <input type="text" name="gyikker" id="gyikker"><br>
-            <button type="submit" value="Kérdés rögzítése!" id="kerdes">Ask a question</button><br><br>
+            <button type="submit" value="Kérdés rögzítése!" id="kerdes">Kérdés rögzítése!</button><br><br>
             <button id="felfelegomb" onclick="tetejere()">↑</button>
 <br>
        
 <br>
             <section class="contact-container">
-                <h2 class="sargac"><a href="kapcsolaten.html" id="kapcs">Contact</a></h2>
-                <p>Do you have any questions?</p> 
-                <p>Contact us today! Reach out to us by phone or email.</p>
+                <h2 class="sargac"><a href="kapcsolat.html" id="kapcs">Kapcsolat</a></h2>
+                <p>Kérdése van?</p> 
+                <p>Vegye fel velünk a kapcsolatot még ma! Keressen minket telefonon, e-mailben</p>
                 <p>E-mail: info@loter.hu</p>
-                <p>Phone: +36 20 123 4567</p>
-                <p>Or at the following address: 8100, Várpalota, Szent István út 1</p>
+                <p>Telefon: +36 20 123 4567</p>
+                <p>Vagy az alábbi címen: 8100, Várpalota, Szent István út 1</p>
             </section>
 
             <iframe id="terkep"
@@ -229,7 +231,7 @@
     </main>
     
     <footer>  
-        <p>&copy;2025 Shooting Range. All rights reserved.</p>
+        <p>&copy; 2025 Lőtér. Minden jog fenntartva.</p>
     </footer>
 
 
@@ -264,22 +266,10 @@ background: linear-gradient(to right, #87574a, #b46324);
 flex-direction: column;
 min-height: 100vh; /* Minimum magasság: teljes képernyő */
 margin: 0;
-text-align: center;
+text-align: center;   
+}
 
-   
-}
-/*h1{
-    position: relative;
-    top: -75px;
-    left: -30px;
-    color: rgb(28, 36, 53);
-    padding: 15px 35px;
-    background-color: white;
-    width:300px;
-    border-radius: 35px;
-    margin-bottom: -75px;
-}
- */
+
 h1, h2, h3, h4 {
     letter-spacing: 2px;
 }
@@ -347,11 +337,6 @@ h1, h2, h3, h4 {
     aspect-ratio: 3 / 2;
     border: 2px solid black;
 }
-img{
-    width: 50px;
-    height: 50px;
-}
-
 
 .center {
   display: block;
@@ -466,7 +451,6 @@ nav a:hover{
     
 }
 
-
 /* Lábléc mindig az alján lesz */
 footer {
     margin-top: auto; /* A láblécet az aljára tolja */
@@ -485,6 +469,7 @@ footer {
     width: max-content; /* A keret mérete igazodik a tartalomhoz */
     margin: 10px;
     color: rgba(255, 255, 255, 0.849); /*Gyak kérdések szövegének a szine*/
+ 
     
 }
 .container {
@@ -495,13 +480,12 @@ footer {
 .flex-item {
     flex: 1; /*rugalmas viselkedés*/
     min-width: 300px; /* Legkisebb szélesség */
-    border-radius: 70px;
+    border-radius: 25px;
 }
-
 #kepek .carousel-inner img{
     height: 100%;
-    width: 100%
-    opject-fit: cover;
+    width: 100%;
+    object-fit: cover;
 }
 #kepek .carousel-inner{
     aspect-ratio:16/9;
@@ -515,13 +499,26 @@ footer {
 }
 .carousel-indicators{
     bottom: 10px;
-
+}
+.carousel-indicators [data-bs-target]{
+    width: 25px;
+    height: 5px;
+    background-color: #5e5e5e;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+    opacity: 0.8;
+    transition: background-color 0.5s, opacity 0.5s;
+}
+#kepek .carousel-indicators button.active{
+    background-color: #dbd9d9 !important;
+    opacity: 1 !important; 
+}
 #imglogo{
     float: left;
     width: 75px;
     height: 75px;
 }
-
 
 /*kérdés rögzitése gomb szövegének a szine*/
 #kerdes{
@@ -533,6 +530,7 @@ footer {
     border-radius: 70px;
 
 }
+
 
 button {
   border: 2px solid #8B4513; /* Sötétbarna szín */
@@ -572,6 +570,7 @@ button {
     color: red;
     
 }
+
 
 
 </style>
@@ -806,7 +805,11 @@ function tetejere() {
 }
 
 
-
+var myCarousel = document.getElementById('demo')
+var carousel = new bootstrap.Carousel()myCarousel,{
+    interval: 5000,
+    ride: 'caousel'
+})
 
 
 
