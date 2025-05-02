@@ -41,13 +41,7 @@
     <div class="vonalkeret"><div class="vonal"></div></div>
     <br>
     <div class="container-fluid" id="kepek">
-        <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-          <!-- Indicators -->
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1" aria-label="Slide 2"></button> 
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2" aria-label="Slide 3"></button>  
-          </div>      
+        <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">   
           <!-- kepek mozgasa -->
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -499,23 +493,7 @@ footer {
     position: absolute;
     z-index: 10; /*előbb hejezkedik el a többi elemhez képest*/
 }
-.carousel-indicators{
-    bottom: 10px;
-}
-.carousel-indicators [data-bs-target]{
-    width: 25px;
-    height: 5px;
-    background-color: #5e5e5e;
-    border: none;
-    margin: 5px;
-    border-radius: 5px;
-    opacity: 1;
-    transition: background-color 0.5s, opacity 0.5s;
-}
-#kepek .carousel-indicators button.active{
-    background-color: #ffff !important;
-    opacity: 1 !important; 
-}
+
 #imglogo{
     float: left;
     width: 75px;
