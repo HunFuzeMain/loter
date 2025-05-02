@@ -583,7 +583,7 @@ button {
      /*kérdés válaszok*/
         document.getElementById("nyil1").onclick = function() {
             var leiras = document.getElementById("leiras1");
-            if (leiras.style.display === "none") {
+            if (getComputedStyle(leiras).display === "none") { /*mindenképp figyelembe veszi a ccs-t*/
                 leiras.style.display = "block";
                 this.innerHTML = "&#x25B2;";
             } else {
