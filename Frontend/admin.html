@@ -6,6 +6,10 @@
     <link href="images/favicon.ico" rel="icon">
     <title>Ügyfélkezelés és Oktatók</title>
     <style>
+      /*globalis box méret*/
+      *,*::before,*::after{
+        box-sizing:border-box;
+      }
       body {
         font-family: Arial, sans-serif;
         margin: 20px;
@@ -24,6 +28,8 @@
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         margin-bottom: 30px;
+        overflow-x: auto; /*ne csusszon szét telefonon*/
+        display: block; /*görgethető táblázat*/
       }
       th,
       td {
@@ -85,6 +91,27 @@
     margin-left: auto;
     margin-right: auto;
     }
+    @media (max-width: 765px){
+      table th, table td{
+        font-size: 12px;
+        padding: 6px;
+      }
+      h1,h2{
+        font-size: 20px;
+      }
+      #password-change{
+        padding: 10px;
+      }
+      button{
+        padding: 6px 10px;
+        font-size: 14px;
+      }
+      #vissza{
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
 
    
     </style>
@@ -93,7 +120,7 @@
     <h1>Ügyfélkezelő rendszer</h1>
     <div id="summary"></div>
     <!-- Időpontok táblázata -->
-    <table id="appointmentsTable">
+    <table id="appointmentsTable" >
       <thead>
         <tr>
           <th>ID</th>
