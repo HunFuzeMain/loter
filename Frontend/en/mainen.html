@@ -59,9 +59,7 @@
             <div class="carousel-item">
               <img src="../images/kep3.jpg" class="d-block w-50 img-fluid" alt="M4Mod" title="M4Mod">
             </div>
-
-          </div>      
-          <!-- kepek mozgasa -->
+                     <!-- kepek mozgasa -->
           <a class="carousel-control-prev" href="#demo" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
             <span class="visually-hidden">Previous</span>
@@ -70,6 +68,9 @@
             <span class="carousel-control-next-icon"></span>
             <span class="visually-hidden">Next</span>
           </a>
+
+          </div>      
+   
         </div>
         
       </div>
@@ -483,37 +484,28 @@ footer {
     border-radius: 25px;
 }
 #kepek .carousel-inner img{
-    height: 100%;
-    width: 100%;
+     width: 50%;
+    height: 45%;
+    margin: auto;
     object-fit: cover;
 }
 #kepek .carousel-inner{
     aspect-ratio:16/9;
     overflow: hidden;
+    position:relative;
 }
 
 .carousel-control-prev,
 .carousel-control-next{
-    top: 50%; /* nyilak középre */
+    top: -25%;
     transform: translateY(-50%)/* nyilak középre */
+    height: 100%;
+    position: absolute;
+    z-index: 10; /*előbb hejezkedik el a többi elemhez képest*/
 }
-.carousel-indicators{
-    bottom: 10px;
-}
-.carousel-indicators [data-bs-target]{
-    width: 25px;
-    height: 5px;
-    background-color: #5e5e5e;
-    border: none;
-    margin: 5px;
-    border-radius: 5px;
-    opacity: 0.8;
-    transition: background-color 0.5s, opacity 0.5s;
-}
-#kepek .carousel-indicators button.active{
-    background-color: #dbd9d9 !important;
-    opacity: 1 !important; 
-}
+
+
+
 #imglogo{
     float: left;
     width: 75px;
