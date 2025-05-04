@@ -51,7 +51,9 @@ public class QuestionsController : ControllerBase
             });
         }
 
-        [HttpGet]
+        
+    }
+    [HttpGet]
         public IActionResult GetAll()
         {
             var questions = _context.Questions
@@ -59,7 +61,6 @@ public class QuestionsController : ControllerBase
                             .ToList();
             return Ok(questions);
         }
-    }
 
 }
 
