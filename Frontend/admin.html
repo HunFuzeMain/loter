@@ -372,6 +372,30 @@
           console.error(err);
         }
       }
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const response = await fetch("https://loter-production.up.railway.app/api/Questions");
+          const questions = await response.json();
+
+          const tbody = document.getElementById("kerdesList");
+          tbody.innerHTML = "";
+
+          for (const q of questions) {
+              tbody.insertAdjacentHTML(
+                "beforeend",
+              `
+              <tr>
+                <td>${q.id}</td>
+                <td>${q.email || "Nincs megadva"}</td>
+                <td>${q.text}</td>
+              </tr>
+              `
+            );
+          }
+        } catch (error) {
+    console.error("Hiba történt a kérdések betöltésekor:", error);
+  }
+});
 
       // Reaktiválja az oktatót (IsActive = true)
       async function reactivateInstructor(id) {
