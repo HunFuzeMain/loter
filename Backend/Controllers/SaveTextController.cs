@@ -23,13 +23,14 @@ public class QuestionsController : ControllerBase
             {
                 return BadRequest(new
                 {
-                    error = "A kérdés szövege nem lehet üres"
+                    error = "Az email és kérdés mező nem lehet üres"
                 });
             }
 
             var question = new Question
             {
                 Text = questionDto.Text
+                Email = questionDto.Email
             };
 
             _context.Questions.Add(question);
@@ -48,6 +49,15 @@ public class QuestionsController : ControllerBase
             {
                 error = "Hiba történt a kérdés mentése közben"
             });
+        }
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var questions = _context.Questions
+                            .Select(q => new {q.Id, q.Email, q.Text})
+                            .ToList();
+            return Ok(questions);
         }
     }
 
