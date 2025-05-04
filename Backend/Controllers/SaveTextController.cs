@@ -56,4 +56,5 @@ public class QuestionsController : ControllerBase
 public class QuestionDto
 {
     public string Text { get; set; }
+    public string Email {get; set; }
 }
