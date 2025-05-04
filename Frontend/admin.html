@@ -6,35 +6,132 @@
     <link href="images/favicon.ico" rel="icon">
     <title>Ügyfélkezelés és Oktatók</title>
     <style>
-      /*globális box méret*/
-      *,*::before,*::after{ box-sizing:border-box; }
-      body { font-family: Arial, sans-serif; margin: 20px; padding: 0; background-color: #f4f4f4; }
-      h1,h2 { text-align: center; margin-top: 32px; }
-      table { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-bottom: 30px; overflow-x: auto; display: block; }
-      th,td { padding: 8px; border: 1px solid #ddd; text-align: left; font-size: 14px; }
-      th { background-color: #ff7700; color: white; }
-      #hiredTable th { background-color: rgb(58,171,232); }
-      button { margin-right: 5px; background-color: #dc3545; color: white; border: none; padding: 8px 16px; cursor: pointer; border-radius: 4px; }
-      button:hover { background-color: #c82333; }
-      .hire-btn { background-color: #28a745; }
-      .hire-btn:hover { background-color: #218838; }
-      #vissza { text-decoration: none; color: red; text-align: center; display: block; margin: 20px auto; }
-      @media (max-width: 765px) {
-        table th, table td { font-size: 12px; padding: 6px; }
-        h1,h2 { font-size: 20px; }
-        button { padding: 6px 10px; font-size: 14px; }
+      /*globalis box méret*/
+      *,*::before,*::after{
+        box-sizing:border-box;
       }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: #f4f4f4;
+        box-sizing: border-box;
+      }
+      h1,
+      h2 {
+        text-align: center;
+        margin-top: 32px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        overflow-x: auto; /*ne csusszon szét telefonon*/
+        display: block; /*görgethető táblázat*/
+      }
+      th,
+      td {
+        padding: 8px;
+        border: 1px solid #ddd;
+        text-align: left;
+        font-size: 14px;
+      }
+      th {
+        background-color: #ff7700;
+        color: white;
+      }
+      #hiredTable th {
+        background-color: rgb(58, 171, 232);
+      }
+      button {
+        margin-right: 5px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      button:hover {
+        background-color: #c82333;
+      }
+      .hire-btn {
+        background-color: #28a745;
+      }
+      .hire-btn:hover {
+        background-color: #218838;
+      }
+      #password-change {
+        max-width: 400px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      #password-change label,
+      #password-change input,
+      #password-change button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      #pwdChangeMsg {
+        padding: 10px;
+        border-radius: 4px;
+        display: none;
+      }
+    #vissza{
+    text-decoration: none;
+    color: red;
+    text-align: right;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    @media (max-width: 765px){
+      table th, table td{
+        font-size: 12px;
+        padding: 6px;
+      }
+      h1,h2{
+        font-size: 20px;
+      }
+      #password-change{
+        padding: 10px;
+      }
+      button{
+        padding: 6px 10px;
+        font-size: 14px;
+      }
+      #vissza{
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+
+   
     </style>
   </head>
   <body>
     <h1>Ügyfélkezelő rendszer</h1>
     <div id="summary"></div>
-
-    <!-- Időpontok -->
-    <table id="appointmentsTable">
+    <!-- Időpontok táblázata -->
+    <table id="appointmentsTable" >
       <thead>
         <tr>
-          <th>ID</th><th>Név</th><th>Dátum</th><th>Tel. szám</th><th>Időpont</th><th>Csomag</th><th>Oktató</th><th>Megjegyzés</th><th>Törlés</th>
+          <th>ID</th>
+          <th>Név</th>
+          <th>Dátum</th>
+          <th>Tel. szám</th>
+          <th>Időpont</th>
+          <th>Csomag</th>
+          <th>Oktató</th>
+          <th>Megjegyzés</th>
+          <th>Törlés</th>
         </tr>
       </thead>
       <tbody id="appointmentsList"></tbody>
@@ -45,7 +142,11 @@
     <table id="hiredTable">
       <thead>
         <tr>
-          <th>ID</th><th>Név</th><th>Felvétel dátuma</th><th>Aktív ügyfelek száma</th><th>Műveletek</th>
+          <th>ID</th>
+          <th>Név</th>
+          <th>Felvétel dátuma</th>
+          <th>Aktív ügyfelek száma</th>
+          <th>Műveletek</th>
         </tr>
       </thead>
       <tbody id="hiredList"></tbody>
@@ -56,7 +157,11 @@
     <table id="otherTable">
       <thead>
         <tr>
-          <th>ID</th><th>Név</th><th>Állapot</th><th>Jelentkezés dátuma</th><th>Műveletek</th>
+          <th>ID</th>
+          <th>Név</th>
+          <th>Állapot</th>
+          <th>Jelentkezés dátuma</th>
+          <th>Műveletek</th>
         </tr>
       </thead>
       <tbody id="otherList"></tbody>
@@ -67,17 +172,27 @@
     <table id="inactiveTable">
       <thead>
         <tr>
-          <th>ID</th><th>Név</th><th>Státusz</th><th>Jelentkezés dátuma</th><th>Műveletek</th>
+          <th>ID</th>
+          <th>Név</th>
+          <th>Státusz</th>
+          <th>Jelentkezés dátuma</th>
+          <th>Műveletek</th>
         </tr>
       </thead>
       <tbody id="inactiveList"></tbody>
     </table>
 
-    <!-- GYIK kérdések -->
-    <h2>Kérdések</h2>
+
+
+    <!--GYIK-->
+       <h2>Kérdések</h2>
     <table id="kerdestable">
       <thead>
-        <tr><th>#</th><th>E-mail</th><th>Kérdés</th></tr>
+        <tr>
+          <th></th>
+          <th>E-mail:</th>
+          <th>Kérdés:</th>
+        </tr>
       </thead>
       <tbody id="kerdesList"></tbody>
     </table>
@@ -88,6 +203,8 @@
       <form id="passwordForm">
         <label for="instrId">Oktató ID:</label>
         <input type="number" id="instrId" required min="1" />
+        <label for="oldPwd">Jelenlegi jelszó:</label>
+        <input type="password" id="oldPwd" required>
         <label for="newPwd">Új jelszó:</label>
         <input type="password" id="newPwd" required />
         <label for="confirmPwd">Új jelszó megerősítése:</label>
@@ -96,99 +213,304 @@
         <div id="pwdChangeMsg"></div>
       </form>
     </div>
-
     <a id="vissza" href="index.html">Kijelentkezés</a>
 
     <script>
       const BASE_URL = "https://loter-production.up.railway.app";
 
-      document.addEventListener("DOMContentLoaded", () => {
-        // Időpontok betöltése
-        async function loadAppointments() {
-          try {
-            const res = await fetch(`${BASE_URL}/api/Appointments`);
-            if (!res.ok) throw new Error();
-            const apps = await res.json();
-            apps.sort((a,b)=>new Date(a.startTime)-new Date(b.startTime));
-            // összegzés
-            const now=new Date();
-            const countThis=apps.filter(a=>new Date(a.startTime).getMonth()===now.getMonth()).length;
-            const countNext=apps.filter(a=>new Date(a.startTime).getMonth()===(now.getMonth()+1)%12).length;
-            document.getElementById("summary").innerText=
-              `Ebben a hónapban még ${countThis} ügyfél van vissza.\nKövetkező hónapra ${countNext} ügyfélnek van időpontja.`;
-            const tbody=document.getElementById("appointmentsList"); tbody.innerHTML="";
-            apps.forEach(a=>{
-              const s=new Date(a.startTime),e=new Date(a.endTime);
-              tbody.insertAdjacentHTML("beforeend`,
-                `<tr><td>${a.id}</td><td>${a.clientName}</td><td>${s.toLocaleDateString()}</td><td>${a.phone}</td><td>${s.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})} - ${e.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</td><td>${a.package}</td><td>${a.instructor}</td><td>${a.notes}</td><td><button onclick="deleteAppointment(${a.id})">Törlés</button></td></tr>`);
-            });
-          } catch {}         }
-        // Oktatók
-        async function loadInstructors() {
-          try {
-            const res=await fetch(`${BASE_URL}/api/Instructors`);
-            if(!res.ok) throw Error();
-            const ins=await res.json();
-            const [hired,others,inactive]=[
-              ins.filter(i=>i.status==='Hired'&&i.isActive),
-              ins.filter(i=>i.status!=='Hired'&&i.isActive),
-              ins.filter(i=>!i.isActive)
-            ];
-            const fill=(list,idKey)=>{
-              const body=document.getElementById(idKey); body.innerHTML="";
-              list.forEach(i=>{
-                let ops='';
-                if(idKey==='hiredList') ops=`<button onclick="deleteInstructor(${i.id})">Törlés</button>`;
-                if(idKey==='otherList') ops=`<button class="hire-btn" onclick="hireInstructor(${i.id})">Felvétel</button><button onclick="deleteInstructor(${i.id})">Törlés</button>`;
-                if(idKey==='inactiveList') ops=`<button onclick="reactivateInstructor(${i.id})">Reaktiválás</button><button onclick="fullDeleteInstructor(${i.id})">Törlés</button>`;
-                const dateApp=new Date(i.applicationDate).toLocaleDateString();
-                const dateHire=i.hireDate?new Date(i.hireDate).toLocaleDateString():'–';
-                const count=i.activeAppointmentsCount?`${i.activeAppointmentsCount} ügyfél`:'–';
-                body.insertAdjacentHTML('beforeend',
-                  `<tr><td>${i.id}</td><td>${i.name}</td><td>${idKey==='hiredList'?dateHire: i.status || dateApp}</td><td>${idKey==='hiredList'?count: dateApp}</td><td>${ops}</td></tr>`);
-              });
-            };
-            fill(hired,'hiredList'); fill(others,'otherList'); fill(inactive,'inactiveList');
-          } catch {}        }
-        // GYIK kérdések betöltése
-        async function loadQuestions() {
-          try {
-            const res=await fetch(`${BASE_URL}/api/Questions`);
-            if(!res.ok) throw Error();
-            const qs=await res.json();
-            const tbody=document.getElementById('kerdesList'); tbody.innerHTML='';
-            qs.forEach((q,i)=>{
-              tbody.insertAdjacentHTML('beforeend',
-                `<tr><td>${i+1}</td><td>${q.email}</td><td>${q.text}</td></tr>`);
-            });
-          } catch {}        }
-        // Jelszó frissítés handler
-        document.getElementById('passwordForm').addEventListener('submit',async e=>{
-          e.preventDefault();
-          const id=document.getElementById('instrId').value;
-          const newPwd=document.getElementById('newPwd').value;
-          const confPwd=document.getElementById('confirmPwd').value;
-          if(newPwd!==confPwd){ alert('Az új jelszavak nem egyeznek.'); return; }
-          try{
-            const res=await fetch(`${BASE_URL}/api/Instructors/${id}/password`,{
-              method:'PATCH',headers:{'Content-Type':'application/json'},
-              body:JSON.stringify({ oldPassword:'', newPassword:newPwd })
-            });
-            if(res.ok){ alert('Jelszó sikeresen frissítve!'); }
-            else{ const txt=await res.text(); alert('Hiba: '+txt); }
-          }catch{ alert('Hálózati hiba.'); }
-        });
-        // Inicializálás és frissítés 10s-ként
-        loadAppointments(); loadInstructors(); loadQuestions();
-        setInterval(()=>{ loadAppointments(); loadInstructors(); loadQuestions(); },10000);
-      });
+      // Betölti és megjeleníti az összes időpontot, valamint frissíti a havi összegzést.
+      async function loadAppointments() {
+        try {
+          const res = await fetch(`${BASE_URL}/api/Appointments`);
+          if (!res.ok) throw new Error("Nem sikerült lekérni az időpontokat.");
+          const apps = await res.json();
+          apps.sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
 
-      // Műveletek funkciók (törlés, felvétel, stb.)
-      async function deleteAppointment(id){ if(!confirm('Biztos?')) return; await fetch(`${BASE_URL}/api/Appointments/${id}`,{method:'DELETE'}); loadAppointments(); loadInstructors(); }
-      async function deleteInstructor(id){ if(!confirm('Biztos?')) return; await fetch(`${BASE_URL}/api/Instructors/${id}`,{method:'DELETE'}); loadInstructors(); loadAppointments(); }
-      async function hireInstructor(id){ if(!confirm('Felvétel?')) return; await fetch(`${BASE_URL}/api/Instructors/${id}/hire`,{method:'PATCH'}); loadInstructors(); loadAppointments(); }
-      async function reactivateInstructor(id){ if(!confirm('Reaktiválás?')) return; await fetch(`${BASE_URL}/api/Instructors/${id}/reactivate`,{method:'PATCH'}); loadInstructors(); loadAppointments(); }
-      async function fullDeleteInstructor(id){ if(!confirm('Végleges törlés?')) return; await fetch(`${BASE_URL}/api/Instructors/${id}/permanent`,{method:'DELETE'}); loadInstructors(); }
+          // Havi összegzés
+          const now = new Date();
+          const thisCount = apps.filter(
+            (a) => new Date(a.startTime).getMonth() === now.getMonth()
+          ).length;
+          const nextCount = apps.filter(
+            (a) =>
+              new Date(a.startTime).getMonth() === (now.getMonth() + 1) % 12
+          ).length;
+          document.getElementById(
+            "summary"
+          ).innerText = `Ebben a hónapban még ${thisCount} ügyfél van vissza.\nKövetkező hónapra ${nextCount} ügyfélnek van időpontja.`;
+
+          // Táblázat feltöltése
+          const tbody = document.getElementById("appointmentsList");
+          tbody.innerHTML = "";
+          for (const a of apps) {
+            const s = new Date(a.startTime),
+              e = new Date(a.endTime);
+            tbody.insertAdjacentHTML(
+              "beforeend",
+              `
+            <tr>
+              <td>${a.id}</td>
+              <td>${a.clientName}</td>
+              <td>${s.toLocaleDateString()}</td>
+              <td>${a.phone}</td>
+              <td>${s.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              })} - ${e.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}</td>
+              <td>${a.package}</td>
+              <td>${a.instructor}</td>
+              <td>${a.notes}</td>
+              <td><button onclick="deleteAppointment(${
+                a.id
+              })">Törlés</button></td>
+            </tr>
+          `
+            );
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      }
+
+      // Törli az adott ID-jú időpontot, majd újratölti az időpontokat és oktatókat.
+      async function deleteAppointment(id) {
+        if (!confirm("Biztosan törölni szeretnéd ezt az időpontot?")) return;
+        const res = await fetch(`${BASE_URL}/api/Appointments/${id}`, {
+          method: "DELETE",
+        });
+        if (res.ok) {
+          alert("Időpont törölve.");
+          await loadAppointments();
+          await loadInstructors();
+        } else {
+          alert("Hiba történt.");
+        }
+      }
+
+      // Betölti az oktatókat, és három csoportba rendezi: Felvett, Nem felvett, Inaktív
+      async function loadInstructors() {
+        try {
+          const res = await fetch(`${BASE_URL}/api/Instructors`);
+          if (!res.ok) throw new Error("Nem sikerült lekérni az oktatókat.");
+          const ins = await res.json();
+
+          const hired = ins.filter((i) => i.status === "Hired" && i.isActive);
+          const others = ins.filter((i) => i.status !== "Hired" && i.isActive);
+          const inactive = ins.filter((i) => !i.isActive);
+
+          // Felvett oktatók
+          const hiredBody = document.getElementById("hiredList");
+          hiredBody.innerHTML = "";
+          for (const i of hired) {
+            hiredBody.insertAdjacentHTML(
+              "beforeend",
+              `
+            <tr>
+              <td>${i.id}</td>
+              <td>${i.name}</td>
+              <td>${
+                i.hireDate ? new Date(i.hireDate).toLocaleDateString() : "–"
+              }</td>
+              <td>${i.activeAppointmentsCount} ügyfél</td>
+              <td><button onclick="deleteInstructor(${
+                i.id
+              })">Törlés</button></td>
+            </tr>
+          `
+            );
+          }
+
+          // Nem felvett oktatók
+          const otherBody = document.getElementById("otherList");
+          otherBody.innerHTML = "";
+          for (const i of others) {
+            otherBody.insertAdjacentHTML(
+              "beforeend",
+              `
+            <tr>
+              <td>${i.id}</td>
+              <td>${i.name}</td>
+              <td>${i.status}</td>
+              <td>${new Date(i.applicationDate).toLocaleDateString()}</td>
+              <td>
+                <button class="hire-btn" onclick="hireInstructor(${
+                  i.id
+                })">Felvétel</button>
+                <button onclick="deleteInstructor(${i.id})">Törlés</button>
+              </td>
+            </tr>
+          `
+            );
+          }
+
+          // Inaktív oktatók
+          const inactiveBody = document.getElementById("inactiveList");
+          inactiveBody.innerHTML = "";
+          for (const i of inactive) {
+            inactiveBody.insertAdjacentHTML(
+              "beforeend",
+              `
+            <tr>
+              <td>${i.id}</td>
+              <td>${i.name}</td>
+              <td>${i.status}</td>
+              <td>${new Date(i.applicationDate).toLocaleDateString()}</td>
+              <td>
+                <button onclick="reactivateInstructor(${
+                  i.id
+                })">Reaktiválás</button>
+                <button onclick="fullDeleteInstructor(${i.id})">Törlés</button>
+              </td>
+            </tr>
+          `
+            );
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      }
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const response = await fetch(`${BASE_URL}/api/Questions`);
+          const questions = await response.json();
+
+          const tbody = document.getElementById("kerdesList");
+          tbody.innerHTML = "";
+
+          for (const q of questions) {
+              tbody.insertAdjacentHTML(
+                "beforeend",
+              `
+              <tr>
+                <td>${q.id}</td>
+                <td>${q.email || "Nincs megadva"}</td>
+                <td>${q.text}</td>
+              </tr>
+              `
+            );
+          }
+        } catch (error) {
+    console.error("Hiba történt a kérdések betöltésekor:", error);
+  }
+});
+
+      // Reaktiválja az oktatót (IsActive = true)
+      async function reactivateInstructor(id) {
+        if (!confirm("Biztosan reaktiválni szeretnéd ezt az oktatót?")) return;
+        const res = await fetch(
+          `${BASE_URL}/api/Instructors/${id}/reactivate`,
+          { method: "PATCH" }
+        );
+        if (res.ok) {
+          alert("Oktató sikeresen reaktiválva!");
+          await loadInstructors();
+          await loadAppointments();
+        } else {
+          const err = await res.json().catch(() => ({}));
+          alert(err.Message || "Hiba a reaktiválásnál.");
+        }
+      }
+
+      // Felveszi az oktatót (Status=Hired), és beállítja a HireDate-et.
+      async function hireInstructor(id) {
+        if (!confirm("Biztosan fel akarod venni ezt az oktatót?")) return;
+        const res = await fetch(`${BASE_URL}/api/Instructors/${id}/hire`, {
+          method: "PATCH",
+        });
+        if (res.ok) {
+          alert("Oktató sikeresen felvéve!");
+          await loadInstructors();
+          await loadAppointments();
+        } else {
+          const err = await res.json().catch(() => ({}));
+          alert(err.Message || "Hiba a felvételnél.");
+        }
+      }
+
+      // Törli az oktatót, ha nincs jövőbeli időpontja.
+      async function deleteInstructor(id) {
+        if (!confirm("Biztosan törölni szeretnéd ezt az oktatót?")) return;
+        const res = await fetch(`${BASE_URL}/api/Instructors/${id}`, {
+          method: "DELETE",
+        });
+        if (res.ok) {
+          alert("Oktató archiválva.");
+          await loadInstructors();
+          await loadAppointments();
+        } else {
+          const err = await res.json().catch(() => ({}));
+          alert(err.Message || "Hiba történt.");
+        }
+      }
+
+      async function fullDeleteInstructor(id) {
+        if (
+          !confirm("Biztosan véglegesen törölni szeretnéd ezt az oktatót az adatbázisból, és az összes fájlt is törölni?")
+          )
+          return;
+        const response = await fetch(
+          `${BASE_URL}/api/Instructors/${id}/permanent`,
+          {
+            method: "DELETE",
+          }
+        );
+
+        if (response.ok) {
+          alert("Oktató véglegesen törölve, és a fájlok is eltávolítva.");
+          await loadInstructors();
+        } else {
+          const msg = await response.text();
+          alert("Hiba: " + msg);
+        }
+      }
+
+    //jelszócsere  
+    document.getElementById("passwordForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const id = document.getElementById("instrId").value;
+  const oldPassword = document.getElementById("oldPwd").value;
+  const newPassword = document.getElementById("newPwd").value;
+  const confirmPassword = document.getElementById("confirmPwd").value;
+
+  if (newPassword !== confirmPassword) {
+    alert("Az új jelszavak nem egyeznek.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`${BASE_URL}/api/Instructors/${id}/password`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ oldPassword, newPassword }),
+    });
+
+    if (response.ok) {
+      alert("Jelszó sikeresen frissítve!");
+    } else {
+      const errorText = await response.text();
+      alert("Hiba történt a jelszó frissítése során: " + errorText);
+    }
+  } catch (error) {
+    console.error("Hálózati hiba:", error);
+    alert("Hálózati hiba történt.");
+  }
+});
+
+
+
+      // Inicializálás + 10s automatikus frissítés
+      loadAppointments();
+      loadInstructors();
+      setInterval(() => {
+        loadAppointments();
+        loadInstructors();
+      }, 5000);
     </script>
   </body>
 </html>
