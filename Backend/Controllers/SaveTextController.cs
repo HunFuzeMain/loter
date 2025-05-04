@@ -52,7 +52,7 @@ public class QuestionsController : ControllerBase
         }
 
         [HttpGet]
-        public async IActionResult GetAll()
+        public IActionResult GetAll()
         {
             var questions = _context.Questions
                             .Select(q => new {q.Id, q.Email, q.Text})
