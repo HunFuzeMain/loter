@@ -29,7 +29,7 @@ public class QuestionsController : ControllerBase
 
             var question = new Question
             {
-                Text = questionDto.Text
+                Text = questionDto.Text,
                 Email = questionDto.Email
             };
 
@@ -52,7 +52,7 @@ public class QuestionsController : ControllerBase
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async IActionResult GetAll()
         {
             var questions = _context.Questions
                             .Select(q => new {q.Id, q.Email, q.Text})
