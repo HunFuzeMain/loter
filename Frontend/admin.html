@@ -22,15 +22,19 @@
         text-align: center;
         margin-top: 32px;
       }
+      .table-kulsodiv{
+        overflow-x: auto;
+        margin-bottom:30px;
+      }
       table {
         width: 100%;
         border-collapse: collapse;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 30px;
-        overflow-x: auto; /*ne csusszon szét telefonon*/
-        display: block; /*görgethető táblázat*/
+        min-width: 600px;
       }
+    
+      
       th,
       td {
         padding: 8px;
@@ -91,33 +95,34 @@
     margin-left: auto;
     margin-right: auto;
     }
-    @media (max-width: 765px){
-      table th, table td{
-        font-size: 12px;
-        padding: 6px;
-      }
-      h1,h2{
-        font-size: 20px;
-      }
-      #password-change{
-        padding: 10px;
-      }
-      button{
-        padding: 6px 10px;
-        font-size: 14px;
-      }
+    @media(max-width: 760px){
+        table th, table td{
+          font-size: 12px;
+          padding: 6px;
+        }
+        h1,h2{
+          font-size: 20px;
+        }
+        #password-change{
+          padding: 10px;
+        }
+        button{
+          padding: 6px 10px;
+          font-size: 14px;
+        }
       #vissza{
         display: block;
-        text-align: center;
+        tex-align: center;
         margin-top: 20px;
       }
-    }
+      }
 
    
     </style>
   </head>
   <body>
     <h1>Ügyfélkezelő rendszer</h1>
+    <div class="table-kulsodiv">
     <div id="summary"></div>
     <!-- Időpontok táblázata -->
     <table id="appointmentsTable" >
@@ -136,9 +141,11 @@
       </thead>
       <tbody id="appointmentsList"></tbody>
     </table>
+    </div>
 
     <!-- Felvett oktatók -->
     <h2>Felvett oktatók</h2>
+    <div class="table-kulsodiv">
     <table id="hiredTable">
       <thead>
         <tr>
@@ -151,9 +158,11 @@
       </thead>
       <tbody id="hiredList"></tbody>
     </table>
-
+    </div>
+    
     <!-- Nem felvett oktatók -->
     <h2>Nem felvett oktatók</h2>
+    <div class="table-kulsodiv">
     <table id="otherTable">
       <thead>
         <tr>
@@ -166,9 +175,11 @@
       </thead>
       <tbody id="otherList"></tbody>
     </table>
-
+    </div>
+    
     <!-- Inaktív oktatók -->
     <h2>Inaktív oktatók</h2>
+    <div class="table-kulsodiv">
     <table id="inactiveTable">
       <thead>
         <tr>
@@ -181,11 +192,11 @@
       </thead>
       <tbody id="inactiveList"></tbody>
     </table>
-
-
+    </div>
 
     <!--GYIK-->
        <h2>Kérdések</h2>
+    <div class="table-kulsodiv">
     <table id="kerdestable">
       <thead>
         <tr>
@@ -196,6 +207,7 @@
       </thead>
       <tbody id="kerdesList"></tbody>
     </table>
+    </div>
 
     <!-- Jelszó módosítása -->
     <div id="password-change">
