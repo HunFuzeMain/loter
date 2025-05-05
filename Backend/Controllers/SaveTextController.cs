@@ -53,7 +53,7 @@ public class QuestionsController : ControllerBase
 
         
     }
-    [HttpDelete("{id}/DeleteQuestion")
+    [HttpDelete("{id}/DeleteQuestion")]
     public async Task<IActionResult> DeleteQuestion(int id)
         {
             try
