@@ -59,7 +59,7 @@ public class QuestionsController : ControllerBase
             try
             {
                 // Find the question by ID
-                var question = await _context.Instructors.FindAsync(id);
+                var question = await _context.Questions.FindAsync(id);
                 if (question == null)
                 {
                     return NotFound(new { Success = false, Message = "Kérdés nem található" });
