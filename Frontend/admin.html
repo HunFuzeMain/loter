@@ -408,7 +408,9 @@
                 <td>${q.id}</td>
                 <td>${q.email || "Nincs megadva"}</td>
                 <td>${q.text}</td>
-                <button onclick="DeleteQuestion(${q.id})">Törlés</button>
+                <td>
+                  <button onclick="DeleteQuestion(${q.id})">Törlés</button>
+                </td>
               </tr>
               `
             );
