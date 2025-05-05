@@ -209,6 +209,7 @@
           <th></th>
           <th>E-mail:</th>
           <th>Kérdés:</th>
+          <th>Műveletek</th>
         </tr>
       </thead>
       <tbody id="kerdesList"></tbody>
@@ -390,6 +391,7 @@
           console.error(err);
         }
       }
+      //Kérdések
       document.addEventListener("DOMContentLoaded", async () => {
         try {
           const response = await fetch(`${BASE_URL}/api/Questions`);
@@ -406,6 +408,7 @@
                 <td>${q.id}</td>
                 <td>${q.email || "Nincs megadva"}</td>
                 <td>${q.text}</td>
+                <button onclick="DeleteQuestion(${q.id})">Törlés</button>
               </tr>
               `
             );
@@ -477,7 +480,27 @@
         );
 
         if (response.ok) {
-          alert("Oktató véglegesen törölve, és a fájlok is eltávolítva.");
+          alert("Kérdés törölve lett");
+          await loadInstructors();
+        } else {
+          const msg = await response.text();
+          alert("Hiba: " + msg);
+        }
+      }
+       async function DeleteQuestion(id) {
+        if (
+          !confirm("Biztosan törölni szeretnéd ezt a kérdést?")
+          )
+          return;
+        const response = await fetch(
+          `${BASE_URL}/api/Questions/${id}/DeleteQuestion`,
+          {
+            method: "DELETE",
+          }
+        );
+
+        if (response.ok) {
+          alert("Kérdés törölve lett.");
           await loadInstructors();
         } else {
           const msg = await response.text();
