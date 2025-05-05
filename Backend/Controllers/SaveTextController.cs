@@ -77,23 +77,11 @@ public class QuestionsController : ControllerBase
                 return StatusCode(StatusCodes.Status500InternalServerError, "Hiba történt");
             }
         }
-        [HttpGet]
-        public async Task<IActionResult> Get()
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Question>>> GetQuestions()
         {
-                try
-            {
-        var questions = await _context.Questions.ToListAsync();
-        return Ok(questions);
-    }
-    catch (Exception ex)
-    {
-        _logger.LogError(ex, "Hiba történt a kérdések lekérdezése során");
-        return StatusCode(500, new
-        {
-            error = "Hiba történt a kérdések lekérdezése közben"
-        });
-    }
-}
+            return await _context.Questions.ToListAsync();
+        }
 
 }
 
