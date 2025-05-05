@@ -53,13 +53,29 @@ public class QuestionsController : ControllerBase
 
         
     }
-    [HttpGet]
-        public IActionResult GetAll()
+    [HttpDelete("{id}/DeleteQuestion")
+    public async Task<IActionResult> DeleteQuestion(int id)
         {
-            var questions = _context.Questions
-                            .Select(q => new {q.Id, q.Email, q.Text})
-                            .ToList();
-            return Ok(questions);
+            try
+            {
+                // Find the question by ID
+                var question = await _context.Instructors.FindAsync(id);
+                if (question == null)
+                {
+                    return NotFound(new { Success = false, Message = "Kérdés nem található" });
+                }
+
+                // Delete the question from the database
+                _context.Questions.Remove(question);
+                await _context.SaveChangesAsync();
+
+                return Ok(new { Success = true, Message = "Kérdés sikeresen törölve" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error deleting question with id {Id}", id);
+                return StatusCode(StatusCodes.Status500InternalServerError, "Hiba történt");
+            }
         }
 
 }
