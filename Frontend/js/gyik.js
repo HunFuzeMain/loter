@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 emailInput.value = "";
                 questionInput.value = "";
 
-                loadQuestions(); // Frissítjük a táblázatot
             } catch (error) {
                 console.error("Error:", error);
                 alert(`Hiba történt: ${error.message}`);
@@ -43,28 +42,5 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-
-/*// Táblázat frissítő függvény
-async function loadQuestions() {
-    try {
-        const response = await fetch('https://loter-production.up.railway.app/api/Questions');
-        const questions = await response.json();
-
-        const tbody = document.getElementById("kerdesList");
-        tbody.innerHTML = "";
-
-        questions.forEach((q, index) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${index + 1}.</td>
-                <td>${q.email}</td>
-                <td>${q.text}</td>
-            `;
-            tbody.appendChild(row);
-        });
-    } catch (error) {
-        console.error("Hiba a kérdések betöltésekor:", error);
-    }
-}*/
 
 window.onload = loadQuestions;
