@@ -391,33 +391,35 @@
           console.error(err);
         }
       }
-      //Kérdések
-      document.addEventListener("DOMContentLoaded", async () => {
-        try {
-          const response = await fetch(`${BASE_URL}/api/Questions`);
-          const questions = await response.json();
+     //Kérdések
+async function loadQuestions() {
+    try {
+        const response = await fetch(`${BASE_URL}/api/Questions`);
+        if (!response.ok) throw new Error("Nem sikerült lekérni a kérdéseket.");
+        const questions = await response.json();
 
-          const tbody = document.getElementById("kerdesList");
-          tbody.innerHTML = "";
+        const tbody = document.getElementById("kerdesList");
+        tbody.innerHTML = "";
 
-          for (const q of questions) {
-              tbody.insertAdjacentHTML(
+        for (const q of questions) {
+            tbody.insertAdjacentHTML(
                 "beforeend",
-              `
-              <tr>
-                <td>${q.id}</td>
-                <td>${q.email || "Nincs megadva"}</td>
-                <td>${q.text}</td>
-                <td>
-                  <button onclick="DeleteQuestion(${q.id})">Törlés</button>
-                </td>
-              </tr>
-              `
+                `
+                <tr>
+                    <td>${q.id}</td>
+                    <td>${q.email || "Nincs megadva"}</td>
+                    <td>${q.text}</td>
+                    <td>
+                        <button onclick="deleteQuestion(${q.id})">Törlés</button>
+                    </td>
+                </tr>
+                `
             );
-          }
-        } catch (error) {
-    console.error("Hiba történt a kérdések betöltésekor:", error);
-  }
+        }
+    } catch (error) {
+        console.error("Hiba történt a kérdések betöltésekor:", error);
+    }
+}
 });
 
       // Reaktiválja az oktatót (IsActive = true)
@@ -550,9 +552,11 @@
       // Inicializálás + 10s automatikus frissítés
       loadAppointments();
       loadInstructors();
+      loadQuestions();
       setInterval(() => {
         loadAppointments();
         loadInstructors();
+        loadQuestions();
       }, 5000);
     </script>
   </body>
