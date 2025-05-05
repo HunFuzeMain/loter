@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Táblázat frissítő függvény
+/*// Táblázat frissítő függvény
 async function loadQuestions() {
     try {
         const response = await fetch('https://loter-production.up.railway.app/api/Questions');
@@ -65,6 +65,6 @@ async function loadQuestions() {
     } catch (error) {
         console.error("Hiba a kérdések betöltésekor:", error);
     }
-}
+}*/
 
 window.onload = loadQuestions;
